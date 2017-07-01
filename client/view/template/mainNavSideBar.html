@@ -1,0 +1,47 @@
+<template name="mainNavSideBar">
+   <nav id="mainNav" class="navbar navbar-default navbar-fixed-top background-white">
+      <div class="container">
+         <!-- Brand and toggle get grouped for better mobile display -->
+         <div class="navbar-header pull-left display-sidebar-button">
+            <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+            <span class="hamb-top"></span>
+            <span class="hamb-middle"></span>
+            <span class="hamb-bottom"></span>
+            </button>
+         </div>
+         <div class="navbar-header pull-right">
+
+            <div class="navbar-header pull-left">
+               <a class="button_for_badge" href="{{pathFor route='home'}}">ilendbooks</a>
+            </div>
+            <div class= "button_for_badge pull-right">
+               <a class="fa fa-comments-o button_for_badge feedback" href=""></a>
+            </div>
+            <div class= "button_for_badge pull-right">
+               <a class="fa fa-money button_for_badge"></a>
+               <span class="button_badge">{{getBookCoin}}</span>
+            </div>
+            <div class="button_for_badge pull-right">
+               <a class="fa fa-bell button_for_badge" href="{{pathFor route='myNotifications'}}"></a>
+               <span class="button_badge">{{getNotificationCount}}</span>
+            </div>
+            <div class="button_for_badge pull-right">
+               <a class="fa fa-instagram button_for_badge" href="{{getInstagramUrl}}" aria-hidden="true"></a>
+            </div>
+            <div class="button_for_badge pull-right">
+               <a class="fa fa-twitter button_for_badge" href="{{getTwitterUrl}}" aria-hidden="true"></a>
+            </div>
+            <div class="button_for_badge pull-right">
+               <a class="fa fa-facebook button_for_badge" href= "{{getFacebookUrl}}" aria-hidden="true"></a>
+            </div>
+                        <div class="navbar-header">
+            </div>
+         </div>
+            {{> keywordSearch}}
+      </div>
+
+      <!-- /.container-fluid -->
+
+   </nav>
+
+</template>

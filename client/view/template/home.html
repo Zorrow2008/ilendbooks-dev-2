@@ -1,0 +1,242 @@
+<template name="home">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">ilendbooks</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="{{pathFor route='login'}}">Login</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#features">Features</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{{pathFor route='aboutUs'}}">About us</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-7">
+                    <div class="header-content">
+                        <div class="header-content-inner">
+                            <h1>Stop paying for textbooks.
+                            <br><br>
+                            ilendbooks<sup style="font-size: 0.5em">&trade;</sup> makes it easy to borrow and lend books with students on your campus. 
+                            <br><br>
+                            Earn BookCoin<sup style="font-size: 0.5em">&trade;</sup> when you lend books that you can use for borrowing books. 
+                            </h1>
+                            <a href="{{pathFor route='signup'}}" class="btn btn-outline btn-xl page-scroll">Get started!</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="device-container">
+                        <div class="device-mockup iphone6_plus portrait white">
+                            <div class="device">
+                                <div class="screen">
+                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                                    <img src="img/demo-screen-1.jpg" class="img-responsive" alt="">
+                                </div>
+                                <div class="button">
+                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="section-heading">
+                        <h2>Discover how to borrow book</h2>
+                        <p class="text-muted">Use BookCoin<sup style="font-size: 0.5em">&trade;</sup> to borrow</p>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="device-container">
+                        <div class="device-mockup iphone6_plus portrait white">
+                            <div class="device">
+                                <div class="screen">
+                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                                    <img src="img/demo-screen-1.jpg" class="img-responsive" alt=""> </div>
+                                <div class="button">
+                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="feature-item">
+                                    <i class="icon-book-open text-primary"></i>
+                                    <h3>Search Freely</h3>
+                                    <p class="text-muted">Search for the books you need</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-item">
+                                    <i class="icon-user text-primary"></i>
+                                    <h3>Choose Whatever</h3>
+                                    <p class="text-muted">Choose a copy based on reviews and confirm</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="feature-item">
+                                    <i class="icon-screen-smartphone text-primary"></i>
+                                    <h3>Meet Up</h3>
+                                    <p class="text-muted">Meet up in person to borrow</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-item">
+                                    <i class="icon-clock text-primary"></i>
+                                    <h3>Enjoy Reading</h3>
+                                    <p class="text-muted">Keep and read the book for one quarter/semester</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="section-heading">
+                        <h2>Discover how to lend a book</h2>
+                        <p class="text-muted">Lend books and earn BookCoins<sup style="font-size: 0.5em">&trade;</sup></p>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="device-container">
+                        <div class="device-mockup iphone6_plus portrait white">
+                            <div class="device">
+                                <div class="screen">
+                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                                    <img src="img/demo-screen-1.jpg" class="img-responsive" alt=""> </div>
+                                <div class="button">
+                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="feature-item">
+                                    <i class="icon-book-open text-primary"></i>
+                                    <h3> Add Books </h3>
+                                    <p class="text-muted">Search for the books you have and add to your shelf</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-item">
+                                    <i class="icon-bell text-primary"></i>
+                                    <h3>Get Notified</h3>
+                                    <p class="text-muted">You will get notified when someone requests your book</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="feature-item">
+                                    <i class="icon-user text-primary"></i>
+                                    <h3>Meet Up</h3>
+                                    <p class="text-muted">Meet up in-person to lend</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-item">
+                                    <i class="icon-like text-primary"></i>
+                                    <h3>Earn BookCoin<sup style="font-size: 0.5em">&trade;</sup></h3>
+                                    <p class="text-muted">Get BookCoin<sup style="font-size: 0.5em">&trade;</sup>and get your book back after a quarter/semester.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--     <section id="download" class="download bg-primary text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h2 class="section-heading">How ILendBooks started</h2>
+                    <p> Instead of spending hundreds of dollars on textbooks you may only use a few times, borrow and lend today! ILendBooks™ is a free website open to all University of Washington students that empowers students to lend and borrow books from one another. </p><br>
+                    <p>On one Winter evening, my uncle and I were discussing my time at the UW. Our conversation steered in the direction of textbook prices: something that all college students can wholeheartedly agree on. Textbooks are expensive. My uncle asked if my school had any kind of textbook exchange program for its students to use. I told him that there is a Facebook group where students can put whatever they have up for sale. The problem was that it still involved money. After googling to see if such a program existed, I asked myself “why not make something that does just that?” </p><br>
+                    <p>After months of mentorship and development, I proudly present the website ILendBooks™. Lend books and earn BookCoin™ which you can use to borrow books from other students! College textbooks are expensive, and I sincerely believe ILendBooks™ can alleviate the grievances and efficiently solve this issue.</p>
+
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section class="cta">
+        <div class="cta-content">
+            <div class="container">
+                <h2>Stop waiting.<br>Start borrowing.</h2>
+                <a href="{{pathFor route='signup'}}" class="btn btn-outline btn-xl page-scroll">Let's Get Started!</a>
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </section>
+
+
+    <section id="contact" class="contact bg-primary">
+        <div class="container">
+            <h2>We <i class="fa fa-heart"></i> new friends!</h2>
+            <ul class="list-inline list-social">
+                <li class="social-twitter">
+                    <a href="{{getTwitterUrl}}"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li class="social-facebook">
+                    <a href="{{getFacebookUrl}}"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li class="social-instagram">
+                    <a href="{{getInstagramUrl}}"><i class="fa fa-instagram"></i></a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+</template>

@@ -1,0 +1,53 @@
+<template name="signup">
+
+<summary>
+        <div class="container">
+            <div class="row" >
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="header-content">
+                        <div class="header-content-inner">
+                           <h1 class="text-center">Sign up</h1>
+                           <form id="login" class="login">
+                              <div id="email-text-div" class="form-group">
+                                  <div >
+                                   <span id="email-error-message" class="error-mesage-display-none"> Please enter a valid, working UW email id ending with '@uw.edu'</span>
+                                   </div>
+                                  <div class="form-group input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                    <input class="form-control" id="user" type="email" name='emailAddress' placeholder="UW email address (must end with '@uw.edu')" required/>
+                                    <span id="email-error-glyphicon" class="glyphicon glyphicon-remove form-control-feedback error-mesage-display-none"></span>
+                                  </div>
+                              </div> 
+                                  <div >
+                                   <span id="password-no-match-error-message" class="error-mesage-display-none">Two password values didnt match, please correct and try.</span>
+                                   </div>
+                               <div id="password-one-text-div" class="form-group input-group">
+                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                 <input class="form-control" type="password" id="password" name="password" placeholder="Password" required/>      
+                                 <span id="password-one-error-glyphicon" class="glyphicon glyphicon-remove form-control-feedback error-mesage-display-none"></span>
+                               </div>
+                               <div id="password-two-text-div" class="form-group input-group">
+                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                 <input class="form-control" type="password" id="confirm" name="password2" placeholder="Confirm Password" required/> 
+                                 <span id="password-two-error-glyphicon" class="glyphicon glyphicon-remove form-control-feedback error-mesage-display-none"></span>    
+                               </div>
+                                  <div class="form-group text-center">
+                                   <span id="terms-error-message" class="error-mesage-display-none">Please accept terms and condition by checking the box below.</span>
+                                   </div>
+                               <div class="form-group text-center">
+                                <input id="terms-condions-agree" type="checkbox" name="check" value="check" required> Review <a href="#" class="terms"> terms and conditions. </a> <br>
+                               </div>
+                              <div class="form-group">
+                                 <input type="submit" class="btn btn-success btn-sm center-block" value="Sign Up">
+                              </div>
+                           </form>
+                           <div class="col-sm-6 col-sm-offset-3 text-center">
+                                <a href="{{pathFor route='login'}}"><span class='ilend-small-font'>Already signed up?</span></a>
+                          </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </summary>
+</template>

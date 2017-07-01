@@ -1,0 +1,26 @@
+
+html {
+height:100%;
+}
+
+body {
+height:100%;
+}
+.wrapper {
+background:gray;
+min-height:100%;
+height: auto !important; 
+height:100%;
+margin-bottom:-100px; 
+}
+
+.footer-push {
+clear:both;
+height:100px; 
+}
+
+footer {
+background:rgba(#a388a3,0.8);
+/*margin-top:20px;*/
+height:138px;
+}

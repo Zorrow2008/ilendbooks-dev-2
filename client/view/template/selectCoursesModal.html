@@ -1,0 +1,31 @@
+<template name="selectCoursesModal">
+   <div class="modal fade" id="findCourses" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <form name="findCourses">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" id="myModal" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Select your courses.</h4>
+               </div>
+               <div class="modal-body">
+					<select class="selectpicker" multiple data-live-search="true">
+					  <option value="CSE142">CSE142</option>
+					  <option value="CSE143">CSE143</option>
+					  <option value="CSE373">CSE373</option>
+					  <option value="MATH307">MATH307</option>
+					  <option value="MATH308">MATH308</option>
+					</select>
+
+               </div>
+               <div class="modal-footer">
+                  <input type="submit" class="btn btn-success" id="findCourses" value="Submit">
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+   <script>
+   	$('select').selectpicker();
+   </script>
+</template>

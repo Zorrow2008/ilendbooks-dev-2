@@ -1,0 +1,28 @@
+<template name="ilendActionModal">
+   <div class="modal fade" id="ilendActionModal" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <form name="ilendActionModal" class="ilendActionModal">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" id="myModal" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">{{getActionModalTitle}}</h4>
+               </div>
+               <div class="modal-body">
+                  <p>{{getActionModalBody}}</p>
+                  {{#if isActionModalFeedBackFlag}}  
+                     {{getActionModalFeedBackLabel}}
+                     <br>
+                     <textarea class="form-control" id="ilendActionModalTextArea" name="ilendActionModalTextArea" placeholder="{{getActionModalFeedBackLabel}}"></textarea>
+                  {{/if}}
+               </div>
+               <div class="modal-footer">
+                  <!--<input type="submit" class="btn btn-success" id="confirmLend" value="Submit">-->
+                  <button type="button" class="btn btn-default  btn-sm" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-danger btn-sm {{getActionModalClass}}" >{{getActionModalDisplay}}</button>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+</template>

@@ -1,0 +1,138 @@
+.lend-lender-available {
+  font-size: .8em;
+  padding-right: 20px; 
+  font-style:italic; 
+  color:#ff9900; 
+  font-weight: bolder;
+}
+
+.ilend-small-font{
+	color: white;
+	font-size: 0.8em
+}
+
+.ilend-color-black{
+		color: black;
+}
+
+.margin-top{
+	margin-top: 20px;
+}
+
+.margin-top-50px{
+	margin-top: 50px;
+}
+
+.font-size-2{
+	font-size: 1.7em;
+}
+
+/* Define how each icon button should look like */
+.button_for_badge {
+  color: black;
+  display: inline-block; /* Inline elements with width and height. TL;DR they make the icon buttons stack from left-to-right instead of top-to-bottom */
+  position: relative; /* All 'absolute'ly positioned elements are relative to this one */
+  padding: 5px 5px 5px 5px; /* Add some padding so it looks nice */
+  font-size: 22px;
+}
+
+.button_badge {
+  background-color: #fa3e3e;
+  border-radius: 4px;
+  color: white;
+ 
+  padding: 1px 3px;
+  font-size: 10px;
+  
+  position: absolute; /* Position the badge within the relatively positioned button */
+  margin-top: 7px;
+  top:0;
+  right: 0;
+}
+.z-index-sidebar-button{
+  z-index:2000
+}
+
+.background-white {
+    background-color: white;
+  }
+
+.error-mesage-display {
+  color: #fdcc52; 
+}
+
+.error-mesage-display-none {
+  display: none;
+}
+
+/*@media (max-width: 768px) {
+	.button_for_badge {
+  		color: black;
+	}
+	.navbar-brand {
+		color: black;
+	}
+
+}*/
+
+/* Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575px) {
+
+  .navbar-brand {
+    color: black;
+  }
+
+  .display-sidebar-button{
+
+  }
+  .display-sidebar-close-button{
+    display: none;
+
+  }
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767px) { 
+
+  .navbar-brand {
+    color: black;
+  }
+
+  .display-sidebar-button{
+
+  }
+  .display-sidebar-close-button{
+  display: none;
+
+  }
+ }
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px) { 
+
+  .display-sidebar-button{
+    display: none;
+
+  }
+
+  .btn-sm {
+    font-size:10px;
+  }
+
+ }
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199px) { 
+  .display-sidebar-button{
+    display: none;
+  }
+
+ }
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+  .display-sidebar-button{
+    display: none;
+  }
+}
+

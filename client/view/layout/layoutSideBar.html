@@ -1,0 +1,14 @@
+<template name="layoutSideBar">
+    <div id="wrapper">
+        <div id="overlay" class="overlay"></div>
+
+		{{> sideBar}} 
+    	<div id="page-content-wrapper">
+	    	{{> mainNavSideBar}}
+	    	
+	    	{{> yield}}
+	    
+        </div>
+    </div>
+
+</template>

@@ -1,0 +1,71 @@
+
+<template name="specificBookPage">
+    <summary>
+      <div class="container margin-top-50px">
+      <h2 class="intro-text text-center" > {{getTitle}} </h2>
+      <hr style="color: white">
+        <div class="row">&nbsp;<br>&nbsp;<br>&nbsp;</div>
+      
+        <div class="col-lg-6">
+             
+                <!--<img src="{{imageFormatter}}{{getImage}}" class="specImg img-responsive img-border img-left img-thumbnail"  alt=""> -->
+                <img src="{{imageFormatter}}{{getImage}}" class="img-responsive img-border  center-block"  alt=""><br>
+        </div>
+        <div class="col-lg-6">
+              <span class="font-size-2">Author: {{getAuthor}} </span><br>
+              <span class="font-size-2">No of pages: {{getNumberOfPages}}</span><br>
+              <span class="font-size-2">Publisher: {{getPublisher}} </span><br>
+              <span class="font-size-2">Edition: {{getEdition}} </span><br>
+              <span class="font-size-2">ISBN: {{getISBN}} </span><br>
+              <span class="font-size-2">Publication Date: {{getPublicationDate}} </span><br><br>
+        </div>
+      </div>
+      <div>
+        &nbsp;
+      </div>
+
+   <div class="container">
+         <div class="row">
+          {{#if hasLenders}}
+              {{#each getLenders}}  
+                  <div class="col-sm-4 col-lg-4 col-md-4">
+                     <div class="thumbnail">
+                      <!--   <img src="http://placehold.it/320x150" alt=""> -->
+                        <div class="caption">
+                           <h4><strong>{{getLenderFirstName userId}}</strong></h4>
+                           Average Rating: <strong>{{getLenderAverageRating}}</strong><br>
+                           {{#if hasBookCondition bookCondition}}
+                              Book Condition: <strong>{{bookCondition}}</strong><br>
+                           {{/if}}
+                           {{#if hasBookDescription bookDescription}}
+                              Lender Notes: <strong>{{bookDescription}}</strong><br>
+                           {{/if}}
+                        </div>
+                        <div>
+                          &nbsp;
+                        </div>
+                        <div class="text-center">
+                           <!-- {{#if hasClickedBorrowAndNotPastBorrow}} -->
+                         <!--      <button id="requestbook-inprocess" name="equestbook-inprocess" class="btn btn-primary btn-sm borrow-request-in-process" >&nbsp;Request a lend!&nbsp;</button> -->
+                           <!-- {{else}} -->
+                              {{#if isMatchedDeclined userId}}
+                                <button type="button" class="btn btn-sm btn-primary" disabled>Request declined.</button>
+
+                              {{else}}
+                                 <button id="requestbook" name="requestbook" class="btn btn-primary btn-sm borrow">&nbsp;Request a lend!&nbsp;</button> 
+                              {{/if}}
+                           <!-- {{/if}} -->
+                        </div>
+                        <div>
+                        &nbsp;
+                        </div>
+                     </div>
+                  </div>
+                {{/each}}
+            {{else}}
+                <h4 class="intro-text text-center"> There are no available lenders for this book. Will contact you as soon as we find one. Thanks for your patietnce and support.</h4>
+            {{/if}}
+         </div>
+      </div>
+    </summary>
+</template>

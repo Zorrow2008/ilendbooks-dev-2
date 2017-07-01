@@ -1,0 +1,14 @@
+<template name="searchResults">
+<summary>
+        <div class="container margin-top-50px">
+              <h2 class="intro-text text-center">Search results for "{{getSearchResult.keyWords}}"</h2>
+              {{>verifiedUser}}
+              <hr style="color: white">
+
+              {{#each getSearchResults}}
+                  {{>searchResult}}
+              {{/each}}
+        </div>
+</summary>
+</template>
+

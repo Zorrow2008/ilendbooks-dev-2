@@ -1,0 +1,26 @@
+<template name="lenderReview">
+   <div class="modal fade" id="lenderReview" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <form name="lenderReview" >
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" id="myModal" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Thank you!</h4>
+               </div>
+               <div class="modal-body">
+                  <p>Tell us about your transaction experience with <strong>{{getLenderName}}</strong> </p>
+                  <strong> How was your interaction during both exchanges? </strong> {{> starsRating class='userInteractionRating' id='userInteractionRating' mutable=true size='lg'}}<br>
+                  <strong> How accurate was the advertised quality of the book? </strong>  {{> starsRating class='advertisedQualityRating' id='advertisedQualityRating' mutable=true size='lg'}} <br>
+                  
+                     Any other comments?<br>
+                  <textarea class="form-control" name="optionalNotes" placeholder="your review"></textarea>
+               </div>
+               <div class="modal-footer">
+                  <input type="submit" class="btn btn-success" id="lenderReview" value="Submit">
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+</template>

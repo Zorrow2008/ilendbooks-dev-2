@@ -1,0 +1,52 @@
+<template name="bookInfo">
+   <div class="row">&nbsp;<br>&nbsp;<br>&nbsp;</div>
+<!--    <div class="row">
+      <div class="col-sm-5">
+         <img class="img-responsive  img-border margin-top center-block" src="{{getImage ilendbooksId}}" alt=""><br>
+      </div>
+      <div  class="col-sm-7">
+         Title - {{getTitle ilendbooksId}}<br>
+         Author - {{getAuthor ilendbooksId}}<br>
+         No of pages - {{getNumberOfPages ilendbooksId}}<br>
+         Publisher - {{getPublisher ilendbooksId}}<br>
+         Edition - {{getEdition ilendbooksId}}<br>
+         ISBN - {{getISBN ilendbooksId}}<br>
+         Publication Date - {{getPublicationDate ilendbooksId}}<br>
+         Status - <a href="#" class="text-left ilendInfoModal">{{status}}</a><br>
+         {{#each getNextStatePrompt}}
+             <a id="{{../ilendbooksId}}" class="option" href="#">{{prompt}}</a> &nbsp;
+         {{/each}}
+      </div>
+      <div>&nbsp;</div>
+   </div> -->
+
+         <div class="row">
+         <div class="col-sm-3">
+            {{#if hasLender}}
+               <span class="cardd-banner"></span>
+            {{/if}}   
+            <img class="img-responsive  img-border  center-block" src="{{imageFormatterOne}}{{getImage ilendbooksId}}" alt=""><br>
+         </div>
+
+         <div  class="col-sm-6">
+            Title - {{getTitle ilendbooksId}}<br>
+            Author - {{getAuthor ilendbooksId}}<br>
+            No of pages - {{getNumberOfPages ilendbooksId}}<br>
+            Publisher - {{getPublisher ilendbooksId}}<br>
+            Edition - {{getEdition ilendbooksId}}<br>
+            ISBN - {{getISBN ilendbooksId}}<br>
+            Publication Date - {{getPublicationDate ilendbooksId}}<br>
+            Media- {{getProductGroup ilendbooksId}}<br><br>
+         </div>
+         <div class="col-sm-3">
+               <div>
+                  <a class="btn btn-outline btn-sm  center-block  ilendInfoModal" role="button">{{status}}</a> <br>
+               </div>
+               {{#each getNextStatePrompt}}
+                  <div>
+                     <a id="{{../ilendbooksId}}" class="btn btn-info btn-sm  center-block  option" role="button">{{prompt}}</a> <br>
+                  </div>               
+               {{/each}}
+         </div>
+   </div>
+</template>

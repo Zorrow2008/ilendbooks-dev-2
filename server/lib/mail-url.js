@@ -1,0 +1,1 @@
+process.env.MAIL_URL = "smtp://" + Meteor.settings.private.mailgun.domain + ":" + Meteor.settings.private.mailgun.password + "@smtp.mailgun.org:587";

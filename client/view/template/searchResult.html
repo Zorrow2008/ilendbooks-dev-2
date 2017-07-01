@@ -1,0 +1,82 @@
+<template name="searchResult">
+{{#if isAllowedProductGroup ItemAttributes}}
+      <div class="row">&nbsp;<br>&nbsp;<br>&nbsp;</div>
+      <div class="row">
+         <div class="col-sm-3">
+            {{#if hasLender}}
+               <span class="cardd-banner"></span>
+            {{/if}}   
+            <img class="img-responsive img-border  center-block" src="{{imageFormatterOne}}{{getLargeImage LargeImage}}" alt=""><br>
+         </div>
+
+         <div  class="col-sm-6">
+            Title - {{getTitle ItemAttributes}}<br>
+            Author - {{getAuthor ItemAttributes}}<br>
+            No of pages - {{getNumberOfPages ItemAttributes}}<br>
+            Publisher - {{getPublisher ItemAttributes}}<br>
+            Edition - {{getEdition ItemAttributes}}<br>
+            ISBN - {{getISBN ItemAttributes}}<br>
+            Publication Date - {{getPublicationDate ItemAttributes}}<br>
+            Media- {{getProductGroup ItemAttributes}}<br><br>
+         </div>
+         <div class="col-sm-3">
+            {{#if isVerifiedUser}}   
+               {{#if hasClickedLend}} 
+                  <div>
+                     <a class="btn btn-info btn-sm  center-block  ownThisBook" role="button">You own this book</a> <br>
+                  </div>
+                  <div>
+                     <a id="not-new-lender-{{ilendbooksId}}" class="btn btn-warning btn-sm center-block notNewLender"  role="button">In your shelf</a><br>
+                  </div>
+               {{else}}
+               <div >
+                  {{#if hasLender}}
+                     <div class="text-right" >
+                        <span class="lend-lender-available">☆ Lender Available</span>
+                     </div>
+                     <div>
+                     {{#if hasEnoughBookCoin}}
+                        <a id="borrow-{{ilendbooksId}}" class="btn btn-outline btn-sm center-block borrow" href="{{pathFor 'specificBookPage'}}"  role="button"> <i class="fa fa-heart" aria-hidden="true"></i> to borrow</a><br>
+                     {{else}}
+                     <a id="lend-{{ilendbooksId}}" class="btn btn-outline btn-sm center-block lend disabled"  role="button">Not enough <i class="fa fa-money " aria-hidden="true"></i></a><br>
+                     {{/if}}
+                     </div>
+                  {{else}}   
+                     {{#if isInBorrowWishList}}
+                     <div class="text-right" >
+                        <span class="lend-lender-available">☆ Will notify on lender found</span>
+                     </div>
+                        <div>
+                           <a id="borrow-{{ilendbooksId}}" class="btn btn-primary btn-sm center-block inBorrowWishList" role="button"> In <i class="fa fa-heart" aria-hidden="true"></i></a><br>
+                        </div>
+                     {{else}}
+                        <div>
+                       
+                           <a id="borrow-{{ilendbooksId}}" class="btn btn-outline btn-sm center-block addToBorrowWishList" role="button"> Add to <i class="fa fa-heart" aria-hidden="true"></i></a><br>
+
+                        </div>
+                     {{/if}}
+
+                  {{/if}}
+               </div>
+               <div>
+                  
+                  <a id="lend-{{ilendbooksId}}" class="btn btn-outline btn-sm center-block lend"  role="button"><i class="fa fa-heart" aria-hidden="true"></i> to lend</a><br>
+
+               </div>   
+               {{/if}}
+               <div>
+                  <a id="{{ilendbooksId}}" class="btn btn-outline btn-sm center-block toAmazon" href="{{DetailPageURL}}" role="button">Buy on <i class="fa fa-amazon" aria-hidden="true"></i></a><br>
+               </div>
+
+            {{else}}
+               <a class="btn btn-default btn-sm center-block  notVerifiedUser" role="button"><i class="fa fa-heart" aria-hidden="true"></i> to borrow</a><br>
+               <a class="btn btn-default btn-sm center-block  notVerifiedUser" role="button"><i class="fa fa-heart" aria-hidden="true"></i> to lend</a> <br>                     
+               <a id="{{ilendbooksId}}" class="btn btn-outline btn-sm center-block toAmazon" href="{{DetailPageURL}}" role="button">Buy on <i class="fa fa-amazon" aria-hidden="true"></i></a>
+            {{/if}}
+         </div>
+   </div>
+   {{/if}}
+</template>
+<!-- ilend-disabled-btn
+ilend-disabled-btn -->

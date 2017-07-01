@@ -1,0 +1,28 @@
+<template name="myNotifications">
+<summary>
+        <div class="container margin-top-50px">
+              <h2 class="intro-text text-center">My notifications</h2>
+              <hr style="color: white">
+              {{#if hasPendingTransactions}}
+                {{#each getPendingTransactions}}
+					         {{placeMessageInSession statusLend statusBorrow contactParameters}}
+                   {{#if isBorrower contactParameters}}
+                    <p> {{getBorrowerMessage}} </p>
+                    {{else}}
+                    <p> {{getLenderMessage}} </p>
+                    {{/if}}
+                {{/each}}
+               {{else}} 
+                  <div class="col-sm-6 col-sm-offset-3 text-center">
+                        <h3>No new notifications as of now.</h3>
+                    </div>
+               {{/if}}
+        </div>
+</summary>
+</template>
+<!--              <div class=" text-center">
+            <p> {{getBorrowerName contactParameters }} has sent you a borrow request for the book "{{getLenderBook contactParameters}}"</p>
+            
+              <button  type="button" id="accept" class="accept btn btn-info btn-xs" >Accept</button>&nbsp;
+              <button  type="button" id="decline" class="decline btn btn-warning btn-xs" >Decline</button>&nbsp;
+            </div> -->

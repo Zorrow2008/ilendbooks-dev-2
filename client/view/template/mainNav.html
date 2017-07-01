@@ -1,0 +1,22 @@
+<template name="mainNav">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top background-white">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header pull-right">
+                <div class="button_for_badge pull-left">
+                    <a class="button_for_badge" href="{{pathFor route='home'}}">ilendbooks</a>
+                </div>
+			  	<div class="button_for_badge pull-right">
+			  		<a class="fa fa-instagram button_for_badge" href="{{getInstagramUrl}}" aria-hidden="true"></a>
+			  	</div>
+			  	<div class="button_for_badge pull-right">
+			  		<a class="fa fa-twitter button_for_badge"  href="{{getTwitterUrl}}" aria-hidden="true"></a>
+			  	</div>
+                <div class="button_for_badge pull-right">
+			  		<a href="{{getFacebookUrl}}" class="fa fa-facebook button_for_badge" aria-hidden="true"></a>
+			  	</div>
+            </div>
+        </div>    
+        <!-- /.container-fluid -->
+    </nav>
+</template>

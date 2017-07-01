@@ -1,0 +1,12 @@
+<template name="books">
+   <summary>
+           <div class="container">
+                 <h1 class="text-center">Books</h1>
+                 <hr style="color: white">
+
+                 {{#each getBooks}}
+                     {{>searchResult}}
+                 {{/each}}
+           </div>
+   </summary>
+</template>

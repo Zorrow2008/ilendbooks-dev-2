@@ -1,0 +1,21 @@
+<template name="myBorrows">
+<summary>
+        <div class="container margin-top-50px">
+              <h2 class="intro-text text-center">My borrows</h2>
+              <hr style="color: white">
+  
+          {{#if hasBooks}}
+					{{#each getBorrowedBooks}}	
+						{{> bookInfo}}
+<!--             {{#if isTransactionComplete status}} 
+                <p align="left"> Click <a class="lenderReview" role="button"> here </a> to give the lender a review. </p> 
+            {{/if}} -->
+					{{/each}}
+               {{else}} 
+                 	<div class="col-sm-6 col-sm-offset-3 text-center">
+                        <h3> Your borrow shelf is empty, please <a href="{{pathFor route='userHome'}}">search</a> and borrow.</h3>
+                  	</div>
+           {{/if}}
+        </div>
+</summary>
+</template>
