@@ -56,5 +56,13 @@ Template.userHome.helpers({
       return userProfile.fName;
    },
 
+   isFirstTime: function() {
+    var user = UserProfile.findOne({userId: Meteor.userId()});
+    console.log(user.isFirstLend)
+    return user.isFirstLend;
+  },
 
+  selectedCourses: function() {
+    return Session.get('classes');
+  }
 })

@@ -1,0 +1,42 @@
+<template name="findCourses">
+   <h3> Hi {{getUserName}} </h3>
+   {{#if isLender}}
+	   {{#if isFirstTime}}
+	   <p> It seems this is your first time using ilendbooks! <br>
+	      Earn some BookCoin by offering textbooks that you currently own! 
+	      Click below to list the courses you have taken at UW and we will find the textbooks you might have. 
+	      We hope you enjoy ilendbooks! 
+	   </p>
+	   {{else}}
+	   <p> Earn some BookCoin by telling us what classes you took this last quarter. If you have the corresponding textbooks,
+	      lend them out to earn BookCoin! 
+	   </p>
+	   {{/if}}
+   {{else}}
+   		{{isBorrower}}
+   {{/if}}
+   <form name="findCourses">
+      <h4 class="modal-title">Select your courses.</h4>
+<!--       <select class="selectpicker" multiple data-live-search="true" data-size="5">
+         <option value="CSE142">CSE142</option>
+         <option value="CSE143">CSE143</option>
+         <option value="CSE373">CSE373</option>
+         <option value="MATH307">MATH307</option>
+         <option value="MATH308">MATH308</option>
+      </select> -->
+      
+      <select class="selectpicker" multiple data-live-search="true" data-size="5">
+		 {{#each getDepartments}}
+          <optgroup label="{{name}}">
+          		{{#each getCourses}}
+         				<option value="{{name}}">{{name}}</option>
+          		{{/each}}
+    	  </optgroup>
+	  	 {{/each}}
+      </select>      
+      <input type="submit" class="btn btn-success" id="findCourses" value="Submit">
+   </form>
+   <script>
+      $('select').selectpicker();
+   </script>
+</template>

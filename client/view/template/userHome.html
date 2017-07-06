@@ -3,19 +3,38 @@
         <div class="container">
             <div class="row" >
                 <div class="col-sm-6 col-sm-offset-3">
-                    <div class="header-content">
+<!--                     <div class="header-content">
                         <div class="header-content-inner">
                            {{#unless currentUser.emails.[0].verified}}
                               <p class="alert">Hey! You're not a verified lender yet!. <a href="#" class="resend-verification-link">Resend verification link</a>.</p>
                            {{/unless}}
-                           <h1 class="text-center">Search for books</h1>
-                           {{> keywordSearch}}
-                           {{> findCoursesLend}}
+                           
+                           {{#unless isFirstTime}}
+                             <h1 class="text-center">Search for books</h1>
+                             {{> keywordSearch}}
+                           {{/unless}}
+                             {{> findCourses}}
+
                         </div>
-                        
-                    </div>
-                     
+                         -->
+                    <!-- </div> -->
+                 {{#unless currentUser.emails.[0].verified}}
+                    <p class="alert">Hey! You're not a verified lender yet!. <a href="#" class="resend-verification-link">Resend verification link</a>.</p>
+                 {{/unless}}
+                 
+                 {{#unless isFirstTime}}
+                   <h1 class="text-center">Search for books</h1>
+                   {{> keywordSearch}}
+                 {{/unless}}
+                 <br><br><br><br>
+                 {{> findCourses}} 
+                 {{#if selectedCourses}} 
+                    I need healing
+                    {{> displayCourseBooks}}
+                 {{/if}}                   
                 </div>
+
+
             </div>
         </div>
     </summary>

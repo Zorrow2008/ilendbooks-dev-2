@@ -36,10 +36,11 @@ Template.user.events({
          phoneNumber : newPhoneNumber,
          contactPreference: document.getElementById('contacts').options[document.getElementById('contacts').selectedIndex].value,
          degree: document.getElementById('degrees').options[document.getElementById('degrees').selectedIndex].value,
-         bookcoin: ilendbooks.private.bitCoin.ACCOUT_CREATION
+         bookcoin: ilendbooks.private.bitCoin.ACCOUT_CREATION,
+         isFirstLend: true
       };
       Meteor.call("createUserProfile",appUUID, userProfile );
-      Session.set('isFirstTime', "isFirstTime");
+      //Session.set('isFirstTime', "isFirstTime");
       Router.go('home');
    }
 })

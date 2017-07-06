@@ -35,3 +35,10 @@ BorrowWishList = new Mongo.Collection("borrowWishList");
 
 Feedback = new Mongo.Collection("feedback");
 
+QuarterTracker = new Mongo.Collection("quarterTracker");
+
+Departments = new Mongo.Collection("departments");
+
+Courses = new Mongo.Collection("courses");
+
+Textbooks = new Mongo.Collection("textbooks");

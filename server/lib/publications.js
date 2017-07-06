@@ -48,3 +48,15 @@ Meteor.publish('pendingTransactions', function() {
 Meteor.publish('iLendMetaData', function() {
 	return ILendMetaData.find();
 })
+
+Meteor.publish('departments', function() {
+	return Departments.find();
+})
+
+Meteor.publish('courses', function() {
+	return Courses.find();
+})
+
+Meteor.publish('textbooks', function() {
+	return Textbooks.find();
+})

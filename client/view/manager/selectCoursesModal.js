@@ -1,10 +1,11 @@
 Template.selectCoursesModal.events({
   'submit form': function() {
     event.preventDefault();
-    var arr = $('select.selectpicker').val()
+    var classes = $('select.selectpicker').val()
     console.log("did i get here");
-    for(var key in arr) {
-      console.log("key " + key + "value: " + arr[key]);
+    for(var key in classes) {
+      console.log("key " + key + "value: " + classes[key]);
     }
+    Session.set('classes', classes);
   }
 });

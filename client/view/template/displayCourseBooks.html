@@ -1,0 +1,49 @@
+<template name="displayCourseBooks">
+
+	
+
+
+	<div class="row">
+	{{#each getCourses}}
+		<div class="span5">
+            <table class="table  table-condensed">
+              <thead>
+                  <tr>
+                      <th>Course</th>
+                      <th>Textbooks</th>
+                      <th>Quantity to lend</th>
+                      <th>Price</th>  
+                      <th>Action </th>                                        
+                  </tr>
+              </thead>   
+              <tbody>
+                <tr>
+                    <td>{{this}}</td>
+                    {{#each getTextbooks this}}
+                      <td>
+                      
+                        {{title}}
+                        <br>
+                      
+                      </td>
+                      <td>Editor</td>
+                      <td><span class="label label-success">Active</span>
+                      </td>     
+                      <td> <button type="button" class="btn btn-primary btn-sm">I have it</button> </td>   
+                      <td> <button type="button" class="btn btn-primary btn-sm">I want it</button> </td>  
+                      
+                    {{/each}}                          
+                </tr>                                  
+              </tbody>
+            </table>
+            </div>
+        {{/each}}
+	</div>
+	<div class="row">
+		<button type="button" class="btn btn-primary btn-sm pull-right">Finished?</button>
+	</div>
+</template>
+
+<!-- Notes:
+-conditional test to determine if borrow or lend button
+-nested array to get all books for each course -->
