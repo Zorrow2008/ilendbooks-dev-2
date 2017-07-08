@@ -7,13 +7,16 @@
 	      Click below to list the courses you have taken at UW and we will find the textbooks you might have. 
 	      We hope you enjoy ilendbooks! 
 	   </p>
-	   {{else}}
-	   <p> Earn some BookCoin by telling us what classes you took this last quarter. If you have the corresponding textbooks,
-	      lend them out to earn BookCoin! 
+	   {{/if}}
+	   {{#if isNotFirstTime}}
+		   <p> Earn some BookCoin by telling us what classes you took this last quarter. If you have the corresponding textbooks,
+		      lend them out to earn BookCoin! 
 	   </p>
 	   {{/if}}
+	   
    {{else}}
    		{{isBorrower}}
+   		<p> Please select your upcoming classes so we can try to find some books for you to borrow. </p>
    {{/if}}
    <form name="findCourses">
       <h4 class="modal-title">Select your courses.</h4>

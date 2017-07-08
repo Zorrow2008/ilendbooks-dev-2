@@ -60,3 +60,7 @@ Meteor.publish('courses', function() {
 Meteor.publish('textbooks', function() {
 	return Textbooks.find();
 })
+
+Meteor.publish('quarterTracker', function() {
+	return QuarterTracker.find();
+})

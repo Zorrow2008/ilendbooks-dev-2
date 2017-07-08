@@ -7,3 +7,10 @@ Template.displayCourseBooks.helpers({
 	    return textbookDoc.textbooks;
   }
 })
+
+Template.displayCourseBooks.events({
+	'click .finished': function() {
+		console.log("displayCourseBooks: " + Session.get('userType'))
+		Meteor.call('updateQuarterTrackerStatus',Session.get('userType'));
+	}
+})

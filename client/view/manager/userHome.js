@@ -64,5 +64,17 @@ Template.userHome.helpers({
 
   selectedCourses: function() {
     return Session.get('classes');
+  },
+
+  cycleComplete: function() {
+    var userDoc = QuarterTracker.findOne({userId: Meteor.userId()});
+   // console.log("cycleComplete" + (userDoc.quarterInfo.hasLent == true && userDoc.quarterInfo.hasBorrowed == true))
+   // if(userDoc.quarterInfo.hasBorrowed == userDoc.quarterInfo.hasLent ) {
+   //    if(userDoc.quarterInfo.hasBorrowed == true) {
+   //      return true;
+   //    }
+   //  }
+   //  return false;
+   return userDoc.quarterInfo[0].hasLent == true && userDoc.quarterInfo[0].hasBorrowed == true;
   }
 })

@@ -2,16 +2,26 @@ Template.findCourses.helpers({
 	isLender: function() {
 		var userDoc = QuarterTracker.findOne({userId: Meteor.userId()});
 		if(userDoc == null) {
+			console.log("true")
 			return true;
-		}else if(userDoc.quarterInfo.hasBorrowed == false && userDoc.quarterInfo.hasLent == false) {
+		}else if(userDoc.quarterInfo[0].hasBorrowed == false && userDoc.quarterInfo[0].isLent == false ) {
 			return true;
 		}else{
+			console.log("false")
 			return false;
 		}
 	},
 
 	isBorrower: function() {
 		Session.set('userType', ilendbooks.public.userType.BORROWER);
+		console.log("isBorrower" + Session.get('userType'));
+	},
+
+	isNotFirstTime: function() {
+		var userDoc = UserProfile.findOne({userId: Meteor.userId()});
+		if(userDoc != null) {
+			return userDoc.isFirstLend;
+		}
 	},
 
 	getUserName: function() {
@@ -21,6 +31,7 @@ Template.findCourses.helpers({
 	isFirstTime: function() {
 		var user = UserProfile.findOne({userId: Meteor.userId()});
 		Session.set('userType', ilendbooks.public.userType.LENDER);
+		console.log("isFirstTime" + Session.get('userType'));
 		return user.isFirstLend;
 	},
 
@@ -52,6 +63,7 @@ Template.findCourses.events({
 	    }
 	    Session.set('classes', classes);
 	    var quarterInfo = {
+	    	userId: Meteor.userId(),
 	    	year: ilendbooks.public.quarters.YEAR,
 	    	currentQuarter: ilendbooks.public.quarters.SUMMER,
 	    	hasBorrowed: false,
@@ -60,7 +72,10 @@ Template.findCourses.events({
 	    	previousQuarterClasses: classes,
 	    	currentQuarterClasses: null
 	    }
-	    Meteor.call('updateQuarterTrackerStatus', quarterInfo);
+	    var userQTDoc = QuarterTracker.findOne({userId: Meteor.userId()});
+	    if(userQTDoc == null) {
+	    	Meteor.call('insertQuarterInfo', quarterInfo);
+	    }
 
   }
 })

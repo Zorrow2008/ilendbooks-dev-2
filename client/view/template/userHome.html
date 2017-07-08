@@ -27,11 +27,12 @@
                    {{> keywordSearch}}
                  {{/unless}}
                  <br><br><br><br>
+                 {{#unless cycleComplete}}
                  {{> findCourses}} 
-                 {{#if selectedCourses}} 
-                    I need healing
-                    {{> displayCourseBooks}}
-                 {{/if}}                   
+                   {{#if selectedCourses}} 
+                      {{> displayCourseBooks}}
+                   {{/if}}
+                 {{/unless}}                   
                 </div>
 
 
