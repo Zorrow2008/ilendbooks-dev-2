@@ -1,0 +1,12 @@
+<template name="suggestedCourses">
+   <summary>
+        <div class="container">
+            <div class="row" >
+			 {{> findCourses}} 
+			   {{#if selectedCourses}} 
+			      {{> displayCourseBooks}}
+			   {{/if}}
+		   </div>
+	   </div>
+   </summary>
+</template>
