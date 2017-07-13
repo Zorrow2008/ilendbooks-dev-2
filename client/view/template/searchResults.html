@@ -4,10 +4,12 @@
               <h2 class="intro-text text-center">Search results for "{{getSearchResult.keyWords}}"</h2>
               {{>verifiedUser}}
               <hr style="color: white">
-
+              
+             <div class="container">
               {{#each getSearchResults}}
                   {{>searchResult}}
               {{/each}}
+              </div>
         </div>
 </summary>
 </template>

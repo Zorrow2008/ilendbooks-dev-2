@@ -4,7 +4,7 @@ Template.findCourses.helpers({
 		if(userDoc == null) {
 			console.log("true")
 			return true;
-		}else if(userDoc.quarterInfo[0].hasBorrowed == false && userDoc.quarterInfo[0].isLent == false ) {
+		}else if(userDoc.quarterInfo[0].hasBorrowed == false && userDoc.quarterInfo[0].hasLent == false ) {
 			return true;
 		}else{
 			console.log("false")
@@ -75,6 +75,8 @@ Template.findCourses.events({
 	    var userQTDoc = QuarterTracker.findOne({userId: Meteor.userId()});
 	    if(userQTDoc == null) {
 	    	Meteor.call('insertQuarterInfo', quarterInfo);
+	    }else{
+	    	Meteor.call('insertCurrentClasses', Session.get('classes'));
 	    }
 
   }

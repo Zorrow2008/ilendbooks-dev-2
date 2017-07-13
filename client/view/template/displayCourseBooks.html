@@ -1,12 +1,44 @@
 <template name="displayCourseBooks">
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2 col-xs-1"> <b> Course </b></div>
+      <div class="col-md-2 col-xs-2 pull-right"> <b>Action</b></div>     
+      <div class="col-md-2 col-xs-2 pull-right"> <b>Action</b></div>
+      <div class="col-md-2 col-xs-2 pull-right"> <b>Textbook price</b> </div>
+      <div class="col-md-2 col-xs-2 pull-right"> <b>Textbook quantity available</b> </div>
+      <div class="col-md-2 col-xs-2 pull-right"> <b>Textbook title</b> </div>
+      
+    </div>
+    {{#each getCourses}}
+      <div class="row">
+       <div class="col-md-1 col-xs-1">{{this}}</div>
+       {{#each getTextbooks this}}
+        <div class="row">
+          <div class="col-md-2 col-xs-2 pull-right"> <button type="button" class="btn btn-primary btn-sm">I want it</button> </div>
+          <div class="col-md-2 col-xs-2 pull-right"> <button type="button" class="btn btn-primary btn-sm">I have it</button> </div>
+          
+          <div class="col-md-2 col-xs-2 pull-right"> 50 BookCoin </div>
+          <div class="col-md-2 col-xs-2 pull-right"> 5 </div>
+          <div class="col-md-2 col-xs-2 pull-right"> {{title}} </div>
 
+        </div>
+        {{/each}}
+        </div>
+    {{/each}}
 	
-
-
 	<div class="row">
-	{{#each getCourses}}
-		<div class="span5">
+		<button type="button" class="btn btn-primary btn-sm pull-right finished">Finished?</button>
+	</div>
+</div>
+</template>
+
+<!-- Notes:
+-conditional test to determine if borrow or lend button
+-nested array to get all books for each course -->
+
+<!--    <div class="span5">
             <table class="table  table-condensed">
+            
               <thead>
                   <tr>
                       <th>Course</th>
@@ -17,33 +49,36 @@
                   </tr>
               </thead>   
               <tbody>
+              {{#each getCourses}}
                 <tr>
                     <td>{{this}}</td>
                     {{#each getTextbooks this}}
-                      <td>
-                      
+                      <td>                    
                         {{title}}
-                        <br>
-                      
+                        <br>                     
                       </td>
-                      <td>Editor</td>
-                      <td><span class="label label-success">Active</span>
+                      <td>5</td>
+                      <td><span class="label label-success">50 bookcoin</span>
                       </td>     
                       <td> <button type="button" class="btn btn-primary btn-sm">I have it</button> </td>   
-                      <td> <button type="button" class="btn btn-primary btn-sm">I want it</button> </td>  
-                      
+                      <td> <button type="button" class="btn btn-primary btn-sm">I want it</button> </td>                    
                     {{/each}}                          
-                </tr>                                  
-              </tbody>
-            </table>
-            </div>
-        {{/each}}
-	</div>
-	<div class="row">
-		<button type="button" class="btn btn-primary btn-sm pull-right finished">Finished?</button>
-	</div>
-</template>
+                </tr>     
+              {{/each}}  -->     
+<!--            <tr> 
+                  <th rowspan="2">CSE143</th> 
+                  <td> Building Java Programs </td>
+                  <td> 5 </td>
+                  <td> 50 bookcoin </td>
+                  <td> <button type="button" class="btn btn-primary btn-sm">I want it</button> </td>
+                </tr>
+                <tr>
+                  <td> Building Java Programs </td>
+                  <td> 5 </td>
+                  <td> 50 bookcoin </td>
+                  <td> <button type="button" class="btn btn-primary btn-sm">I want it</button> </td>        
+                </tr> -->
 
-<!-- Notes:
--conditional test to determine if borrow or lend button
--nested array to get all books for each course -->
+<!--               </tbody>          
+            </table>
+      </div> -->  

@@ -1,5 +1,5 @@
 <template name="searchResult">
-{{#if isAllowedProductGroup ItemAttributes}}
+<!-- {{#if isAllowedProductGroup ItemAttributes}}
       <div class="row">&nbsp;<br>&nbsp;<br>&nbsp;</div>
       <div class="row">
          <div class="col-sm-3">
@@ -76,7 +76,55 @@
             {{/if}}
          </div>
    </div>
-   {{/if}}
+   {{/if}} -->
+   {{#if isAllowedProductGroup ItemAttributes}}
+     
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- bootsnipp Circle Menu -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-5715866801509976"
+                 data-ad-slot="3922266447"
+                 data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+            <br>
+            <br>
+                
+                  <div>
+
+                    
+                    <div class="col-sm-4">
+                      <div class="profile-card text-center">
+
+                        <img class="img-responsive" src="https://images.unsplash.com/photo-1454678904372-2ca94103eca4?crop=entropy&fit=crop&fm=jpg&h=975&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1925">
+                        
+                        <!-- <img class="img-responsive img-border  center-block" src="{{imageFormatterOne}}{{getLargeImage LargeImage}}" alt=""> -->
+                        <div class="profile-info">
+
+                          <img class="profile-pic" src="https://pbs.twimg.com/profile_images/711000557742395396/jzm8hqwW.jpg">
+
+                          <h2 class="hvr-underline-from-center">{{getTitle ItemAttributes}}<span>{{getAuthor ItemAttributes}}</span></h2>
+                          <div>Publisher - {{getPublisher ItemAttributes}}<br>
+                              Edition - {{getEdition ItemAttributes}}<br>
+                              ISBN - {{getISBN ItemAttributes}}<br>
+                              Publication Date - {{getPublicationDate ItemAttributes}}<br>
+                              Media- {{getProductGroup ItemAttributes}}<br><br></div>
+                          <a href="http://www.twitter.com/mike_youngg"><i class="fa fa-twitter fa-2x"></i></a>
+                          <a href="mailto:michael_y@live.co.uk"><i class="fa fa-envelope-o fa-2x"></i></a>
+                          <a href="http://www.linkedin.com"><i class="fa fa-linkedin fa-2x"></i></a>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                
+              
+       
+              
+            
+        {{/if}}
 </template>
 <!-- ilend-disabled-btn
 ilend-disabled-btn -->
