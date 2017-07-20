@@ -10,517 +10,517 @@ Meteor.startup(function() {
         }
 
         /*************** Departments ***************/
-        var departments = [
-           {
-              "id":"AA",
-              "name":"AA"
-           },
-           {
-              "id":"AAS",
-              "name":"AAS"
-           },
-           {
-              "id":"ACCTG",
-              "name":"ACCTG"
-           },
-           {
-              "id":"AES",
-              "name":"AES"
-           },
-           {
-              "id":"AFRAM",
-              "name":"AFRAM"
-           },
-           {
-              "id":"AMATH",
-              "name":"AMATH"
-           },
-           {
-              "id":"ANTH",
-              "name":"ANTH"
-           },
-           {
-              "id":"ARCH",
-              "name":"ARCH"
-           },
-           {
-              "id":"ARCHY",
-              "name":"ARCHY"
-           },
-           {
-              "id":"ARTH",
-              "name":"ARTH"
-           },
-           {
-              "id":"ASIAN",
-              "name":"ASIAN"
-           },
-           {
-              "id":"ASL",
-              "name":"ASL"
-           },
-           {
-              "id":"ASTR",
-              "name":"ASTR"
-           },
-           {
-              "id":"ATMS",
-              "name":"ATMS"
-           },
-           {
-              "id":"BCMU",
-              "name":"BCMU"
-           },
-           {
-              "id":"BCS",
-              "name":"BCS"
-           },
-           {
-              "id":"BIOA",
-              "name":"BIOA"
-           },
-           {
-              "id":"BIOC",
-              "name":"BIOC"
-           },
-           {
-              "id":"BIOL",
-              "name":"BIOL"
-           },
-           {
-              "id":"BIOST",
-              "name":"BIOST"
-           },
-           {
-              "id":"BSE",
-              "name":"BSE"
-           },
-           {
-              "id":"C LIT",
-              "name":"C LIT"
-           },
-           {
-              "id":"CEE",
-              "name":"CEE"
-           },
-           {
-              "id":"CHEM",
-              "name":"CHEM"
-           },
-           {
-              "id":"CHEME",
-              "name":"CHEME"
-           },
-           {
-              "id":"CHID",
-              "name":"CHID"
-           },
-           {
-              "id":"CHIN",
-              "name":"CHIN"
-           },
-           {
-              "id":"CHSTU",
-              "name":"CHSTU"
-           },
-           {
-              "id":"CLAS",
-              "name":"CLAS"
-           },
-           {
-              "id":"CM",
-              "name":"CM"
-           },
-           {
-              "id":"COM",
-              "name":"COM"
-           },
-           {
-              "id":"CS\u0026SS",
-              "name":"CS\u0026SS"
-           },
-           {
-              "id":"CSE",
-              "name":"CSE"
-           },
-           {
-              "id":"DANISH",
-              "name":"DANISH"
-           },
-           {
-              "id":"DRAMA",
-              "name":"DRAMA"
-           },
-           {
-              "id":"EARLY",
-              "name":"EARLY"
-           },
-           {
-              "id":"ECON",
-              "name":"ECON"
-           },
-           {
-              "id":"EDC\u0026I",
-              "name":"EDC\u0026I"
-           },
-           {
-              "id":"EDLPS",
-              "name":"EDLPS"
-           },
-           {
-              "id":"EDPSY",
-              "name":"EDPSY"
-           },
-           {
-              "id":"EDSPE",
-              "name":"EDSPE"
-           },
-           {
-              "id":"EDUC",
-              "name":"EDUC"
-           },
-           {
-              "id":"ENGL",
-              "name":"ENGL"
-           },
-           {
-              "id":"ENGR",
-              "name":"ENGR"
-           },
-           {
-              "id":"ENTRE",
-              "name":"ENTRE"
-           },
-           {
-              "id":"ENVIR",
-              "name":"ENVIR"
-           },
-           {
-              "id":"EPI",
-              "name":"EPI"
-           },
-           {
-              "id":"ESRM",
-              "name":"ESRM"
-           },
-           {
-              "id":"ESS",
-              "name":"ESS"
-           },
-           {
-              "id":"FINN",
-              "name":"FINN"
-           },
-           {
-              "id":"FISH",
-              "name":"FISH"
-           },
-           {
-              "id":"FRENCH",
-              "name":"FRENCH"
-           },
-           {
-              "id":"GENST",
-              "name":"GENST"
-           },
-           {
-              "id":"GEOG",
-              "name":"GEOG"
-           },
-           {
-              "id":"GREEK",
-              "name":"GREEK"
-           },
-           {
-              "id":"GWSS",
-              "name":"GWSS"
-           },
-           {
-              "id":"HCDE",
-              "name":"HCDE"
-           },
-           {
-              "id":"HINDI",
-              "name":"HINDI"
-           },
-           {
-              "id":"HONORS",
-              "name":"HONORS"
-           },
-           {
-              "id":"HSERV",
-              "name":"HSERV"
-           },
-           {
-              "id":"HSMGMT",
-              "name":"HSMGMT"
-           },
-           {
-              "id":"HSTAA",
-              "name":"HSTAA"
-           },
-           {
-              "id":"HSTAM",
-              "name":"HSTAM"
-           },
-           {
-              "id":"HSTAS",
-              "name":"HSTAS"
-           },
-           {
-              "id":"HSTCMP",
-              "name":"HSTCMP"
-           },
-           {
-              "id":"HSTEU",
-              "name":"HSTEU"
-           },
-           {
-              "id":"HSTRY",
-              "name":"HSTRY"
-           },
-           {
-              "id":"IBUS",
-              "name":"IBUS"
-           },
-           {
-              "id":"IMMUN",
-              "name":"IMMUN"
-           },
-           {
-              "id":"INDE",
-              "name":"INDE"
-           },
-           {
-              "id":"INFX",
-              "name":"INFX"
-           },
-           {
-              "id":"IS",
-              "name":"IS"
-           },
-           {
-              "id":"ITAL",
-              "name":"ITAL"
-           },
-           {
-              "id":"JAPAN",
-              "name":"JAPAN"
-           },
-           {
-              "id":"JSIS",
-              "name":"JSIS"
-           },
-           {
-              "id":"JSISA",
-              "name":"JSISA"
-           },
-           {
-              "id":"KOREAN",
-              "name":"KOREAN"
-           },
-           {
-              "id":"LATIN",
-              "name":"LATIN"
-           },
-           {
-              "id":"LING",
-              "name":"LING"
-           },
-           {
-              "id":"LIS",
-              "name":"LIS"
-           },
-           {
-              "id":"LSJ",
-              "name":"LSJ"
-           },
-           {
-              "id":"MATH",
-              "name":"MATH"
-           },
-           {
-              "id":"ME",
-              "name":"ME"
-           },
-           {
-              "id":"MEDSCI",
-              "name":"MEDSCI"
-           },
-           {
-              "id":"MGMT",
-              "name":"MGMT"
-           },
-           {
-              "id":"MKTG",
-              "name":"MKTG"
-           },
-           {
-              "id":"MSE",
-              "name":"MSE"
-           },
-           {
-              "id":"MUHST",
-              "name":"MUHST"
-           },
-           {
-              "id":"MUSIC",
-              "name":"MUSIC"
-           },
-           {
-              "id":"NBIO",
-              "name":"NBIO"
-           },
-           {
-              "id":"NCLIN",
-              "name":"NCLIN"
-           },
-           {
-              "id":"NEARE",
-              "name":"NEARE"
-           },
-           {
-              "id":"NORW",
-              "name":"NORW"
-           },
-           {
-              "id":"NSG",
-              "name":"NSG"
-           },
-           {
-              "id":"NURS",
-              "name":"NURS"
-           },
-           {
-              "id":"NUTR",
-              "name":"NUTR"
-           },
-           {
-              "id":"OCEAN",
-              "name":"OCEAN"
-           },
-           {
-              "id":"OPMGT",
-              "name":"OPMGT"
-           },
-           {
-              "id":"PHIL",
-              "name":"PHIL"
-           },
-           {
-              "id":"PHYS",
-              "name":"PHYS"
-           },
-           {
-              "id":"POLS",
-              "name":"POLS"
-           },
-           {
-              "id":"POLSH",
-              "name":"POLSH"
-           },
-           {
-              "id":"PORT",
-              "name":"PORT"
-           },
-           {
-              "id":"PSYCH",
-              "name":"PSYCH"
-           },
-           {
-              "id":"PUBPOL",
-              "name":"PUBPOL"
-           },
-           {
-              "id":"QMETH",
-              "name":"QMETH"
-           },
-           {
-              "id":"QSCI",
-              "name":"QSCI"
-           },
-           {
-              "id":"REHAB",
-              "name":"REHAB"
-           },
-           {
-              "id":"RELIG",
-              "name":"RELIG"
-           },
-           {
-              "id":"RUSS",
-              "name":"RUSS"
-           },
-           {
-              "id":"SCAND",
-              "name":"SCAND"
-           },
-           {
-              "id":"SCM",
-              "name":"SCM"
-           },
-           {
-              "id":"SEFS",
-              "name":"SEFS"
-           },
-           {
-              "id":"SLAVIC",
-              "name":"SLAVIC"
-           },
-           {
-              "id":"SMEA",
-              "name":"SMEA"
-           },
-           {
-              "id":"SNKRT",
-              "name":"SNKRT"
-           },
-           {
-              "id":"SOC",
-              "name":"SOC"
-           },
-           {
-              "id":"SOCWF",
-              "name":"SOCWF"
-           },
-           {
-              "id":"SOCWL",
-              "name":"SOCWL"
-           },
-           {
-              "id":"SPAN",
-              "name":"SPAN"
-           },
-           {
-              "id":"STAT",
-              "name":"STAT"
-           },
-           {
-              "id":"SWA",
-              "name":"SWA"
-           },
-           {
-              "id":"SWED",
-              "name":"SWED"
-           },
-           {
-              "id":"TAGLG",
-              "name":"TAGLG"
-           },
-           {
-              "id":"URBDP",
-              "name":"URBDP"
-           },
-           {
-              "id":"VIET",
-              "name":"VIET"
-           }
-        ]
-        Departments.insert({
-            institute: "uw.edu",
-            campus: "seattle",
-            departments: departments
-        });
+        // var departments = [
+        //    {
+        //       "id":"AA",
+        //       "name":"AA"
+        //    },
+        //    {
+        //       "id":"AAS",
+        //       "name":"AAS"
+        //    },
+        //    {
+        //       "id":"ACCTG",
+        //       "name":"ACCTG"
+        //    },
+        //    {
+        //       "id":"AES",
+        //       "name":"AES"
+        //    },
+        //    {
+        //       "id":"AFRAM",
+        //       "name":"AFRAM"
+        //    },
+        //    {
+        //       "id":"AMATH",
+        //       "name":"AMATH"
+        //    },
+        //    {
+        //       "id":"ANTH",
+        //       "name":"ANTH"
+        //    },
+        //    {
+        //       "id":"ARCH",
+        //       "name":"ARCH"
+        //    },
+        //    {
+        //       "id":"ARCHY",
+        //       "name":"ARCHY"
+        //    },
+        //    {
+        //       "id":"ARTH",
+        //       "name":"ARTH"
+        //    },
+        //    {
+        //       "id":"ASIAN",
+        //       "name":"ASIAN"
+        //    },
+        //    {
+        //       "id":"ASL",
+        //       "name":"ASL"
+        //    },
+        //    {
+        //       "id":"ASTR",
+        //       "name":"ASTR"
+        //    },
+        //    {
+        //       "id":"ATMS",
+        //       "name":"ATMS"
+        //    },
+        //    {
+        //       "id":"BCMU",
+        //       "name":"BCMU"
+        //    },
+        //    {
+        //       "id":"BCS",
+        //       "name":"BCS"
+        //    },
+        //    {
+        //       "id":"BIOA",
+        //       "name":"BIOA"
+        //    },
+        //    {
+        //       "id":"BIOC",
+        //       "name":"BIOC"
+        //    },
+        //    {
+        //       "id":"BIOL",
+        //       "name":"BIOL"
+        //    },
+        //    {
+        //       "id":"BIOST",
+        //       "name":"BIOST"
+        //    },
+        //    {
+        //       "id":"BSE",
+        //       "name":"BSE"
+        //    },
+        //    {
+        //       "id":"C LIT",
+        //       "name":"C LIT"
+        //    },
+        //    {
+        //       "id":"CEE",
+        //       "name":"CEE"
+        //    },
+        //    {
+        //       "id":"CHEM",
+        //       "name":"CHEM"
+        //    },
+        //    {
+        //       "id":"CHEME",
+        //       "name":"CHEME"
+        //    },
+        //    {
+        //       "id":"CHID",
+        //       "name":"CHID"
+        //    },
+        //    {
+        //       "id":"CHIN",
+        //       "name":"CHIN"
+        //    },
+        //    {
+        //       "id":"CHSTU",
+        //       "name":"CHSTU"
+        //    },
+        //    {
+        //       "id":"CLAS",
+        //       "name":"CLAS"
+        //    },
+        //    {
+        //       "id":"CM",
+        //       "name":"CM"
+        //    },
+        //    {
+        //       "id":"COM",
+        //       "name":"COM"
+        //    },
+        //    {
+        //       "id":"CS\u0026SS",
+        //       "name":"CS\u0026SS"
+        //    },
+        //    {
+        //       "id":"CSE",
+        //       "name":"CSE"
+        //    },
+        //    {
+        //       "id":"DANISH",
+        //       "name":"DANISH"
+        //    },
+        //    {
+        //       "id":"DRAMA",
+        //       "name":"DRAMA"
+        //    },
+        //    {
+        //       "id":"EARLY",
+        //       "name":"EARLY"
+        //    },
+        //    {
+        //       "id":"ECON",
+        //       "name":"ECON"
+        //    },
+        //    {
+        //       "id":"EDC\u0026I",
+        //       "name":"EDC\u0026I"
+        //    },
+        //    {
+        //       "id":"EDLPS",
+        //       "name":"EDLPS"
+        //    },
+        //    {
+        //       "id":"EDPSY",
+        //       "name":"EDPSY"
+        //    },
+        //    {
+        //       "id":"EDSPE",
+        //       "name":"EDSPE"
+        //    },
+        //    {
+        //       "id":"EDUC",
+        //       "name":"EDUC"
+        //    },
+        //    {
+        //       "id":"ENGL",
+        //       "name":"ENGL"
+        //    },
+        //    {
+        //       "id":"ENGR",
+        //       "name":"ENGR"
+        //    },
+        //    {
+        //       "id":"ENTRE",
+        //       "name":"ENTRE"
+        //    },
+        //    {
+        //       "id":"ENVIR",
+        //       "name":"ENVIR"
+        //    },
+        //    {
+        //       "id":"EPI",
+        //       "name":"EPI"
+        //    },
+        //    {
+        //       "id":"ESRM",
+        //       "name":"ESRM"
+        //    },
+        //    {
+        //       "id":"ESS",
+        //       "name":"ESS"
+        //    },
+        //    {
+        //       "id":"FINN",
+        //       "name":"FINN"
+        //    },
+        //    {
+        //       "id":"FISH",
+        //       "name":"FISH"
+        //    },
+        //    {
+        //       "id":"FRENCH",
+        //       "name":"FRENCH"
+        //    },
+        //    {
+        //       "id":"GENST",
+        //       "name":"GENST"
+        //    },
+        //    {
+        //       "id":"GEOG",
+        //       "name":"GEOG"
+        //    },
+        //    {
+        //       "id":"GREEK",
+        //       "name":"GREEK"
+        //    },
+        //    {
+        //       "id":"GWSS",
+        //       "name":"GWSS"
+        //    },
+        //    {
+        //       "id":"HCDE",
+        //       "name":"HCDE"
+        //    },
+        //    {
+        //       "id":"HINDI",
+        //       "name":"HINDI"
+        //    },
+        //    {
+        //       "id":"HONORS",
+        //       "name":"HONORS"
+        //    },
+        //    {
+        //       "id":"HSERV",
+        //       "name":"HSERV"
+        //    },
+        //    {
+        //       "id":"HSMGMT",
+        //       "name":"HSMGMT"
+        //    },
+        //    {
+        //       "id":"HSTAA",
+        //       "name":"HSTAA"
+        //    },
+        //    {
+        //       "id":"HSTAM",
+        //       "name":"HSTAM"
+        //    },
+        //    {
+        //       "id":"HSTAS",
+        //       "name":"HSTAS"
+        //    },
+        //    {
+        //       "id":"HSTCMP",
+        //       "name":"HSTCMP"
+        //    },
+        //    {
+        //       "id":"HSTEU",
+        //       "name":"HSTEU"
+        //    },
+        //    {
+        //       "id":"HSTRY",
+        //       "name":"HSTRY"
+        //    },
+        //    {
+        //       "id":"IBUS",
+        //       "name":"IBUS"
+        //    },
+        //    {
+        //       "id":"IMMUN",
+        //       "name":"IMMUN"
+        //    },
+        //    {
+        //       "id":"INDE",
+        //       "name":"INDE"
+        //    },
+        //    {
+        //       "id":"INFX",
+        //       "name":"INFX"
+        //    },
+        //    {
+        //       "id":"IS",
+        //       "name":"IS"
+        //    },
+        //    {
+        //       "id":"ITAL",
+        //       "name":"ITAL"
+        //    },
+        //    {
+        //       "id":"JAPAN",
+        //       "name":"JAPAN"
+        //    },
+        //    {
+        //       "id":"JSIS",
+        //       "name":"JSIS"
+        //    },
+        //    {
+        //       "id":"JSISA",
+        //       "name":"JSISA"
+        //    },
+        //    {
+        //       "id":"KOREAN",
+        //       "name":"KOREAN"
+        //    },
+        //    {
+        //       "id":"LATIN",
+        //       "name":"LATIN"
+        //    },
+        //    {
+        //       "id":"LING",
+        //       "name":"LING"
+        //    },
+        //    {
+        //       "id":"LIS",
+        //       "name":"LIS"
+        //    },
+        //    {
+        //       "id":"LSJ",
+        //       "name":"LSJ"
+        //    },
+        //    {
+        //       "id":"MATH",
+        //       "name":"MATH"
+        //    },
+        //    {
+        //       "id":"ME",
+        //       "name":"ME"
+        //    },
+        //    {
+        //       "id":"MEDSCI",
+        //       "name":"MEDSCI"
+        //    },
+        //    {
+        //       "id":"MGMT",
+        //       "name":"MGMT"
+        //    },
+        //    {
+        //       "id":"MKTG",
+        //       "name":"MKTG"
+        //    },
+        //    {
+        //       "id":"MSE",
+        //       "name":"MSE"
+        //    },
+        //    {
+        //       "id":"MUHST",
+        //       "name":"MUHST"
+        //    },
+        //    {
+        //       "id":"MUSIC",
+        //       "name":"MUSIC"
+        //    },
+        //    {
+        //       "id":"NBIO",
+        //       "name":"NBIO"
+        //    },
+        //    {
+        //       "id":"NCLIN",
+        //       "name":"NCLIN"
+        //    },
+        //    {
+        //       "id":"NEARE",
+        //       "name":"NEARE"
+        //    },
+        //    {
+        //       "id":"NORW",
+        //       "name":"NORW"
+        //    },
+        //    {
+        //       "id":"NSG",
+        //       "name":"NSG"
+        //    },
+        //    {
+        //       "id":"NURS",
+        //       "name":"NURS"
+        //    },
+        //    {
+        //       "id":"NUTR",
+        //       "name":"NUTR"
+        //    },
+        //    {
+        //       "id":"OCEAN",
+        //       "name":"OCEAN"
+        //    },
+        //    {
+        //       "id":"OPMGT",
+        //       "name":"OPMGT"
+        //    },
+        //    {
+        //       "id":"PHIL",
+        //       "name":"PHIL"
+        //    },
+        //    {
+        //       "id":"PHYS",
+        //       "name":"PHYS"
+        //    },
+        //    {
+        //       "id":"POLS",
+        //       "name":"POLS"
+        //    },
+        //    {
+        //       "id":"POLSH",
+        //       "name":"POLSH"
+        //    },
+        //    {
+        //       "id":"PORT",
+        //       "name":"PORT"
+        //    },
+        //    {
+        //       "id":"PSYCH",
+        //       "name":"PSYCH"
+        //    },
+        //    {
+        //       "id":"PUBPOL",
+        //       "name":"PUBPOL"
+        //    },
+        //    {
+        //       "id":"QMETH",
+        //       "name":"QMETH"
+        //    },
+        //    {
+        //       "id":"QSCI",
+        //       "name":"QSCI"
+        //    },
+        //    {
+        //       "id":"REHAB",
+        //       "name":"REHAB"
+        //    },
+        //    {
+        //       "id":"RELIG",
+        //       "name":"RELIG"
+        //    },
+        //    {
+        //       "id":"RUSS",
+        //       "name":"RUSS"
+        //    },
+        //    {
+        //       "id":"SCAND",
+        //       "name":"SCAND"
+        //    },
+        //    {
+        //       "id":"SCM",
+        //       "name":"SCM"
+        //    },
+        //    {
+        //       "id":"SEFS",
+        //       "name":"SEFS"
+        //    },
+        //    {
+        //       "id":"SLAVIC",
+        //       "name":"SLAVIC"
+        //    },
+        //    {
+        //       "id":"SMEA",
+        //       "name":"SMEA"
+        //    },
+        //    {
+        //       "id":"SNKRT",
+        //       "name":"SNKRT"
+        //    },
+        //    {
+        //       "id":"SOC",
+        //       "name":"SOC"
+        //    },
+        //    {
+        //       "id":"SOCWF",
+        //       "name":"SOCWF"
+        //    },
+        //    {
+        //       "id":"SOCWL",
+        //       "name":"SOCWL"
+        //    },
+        //    {
+        //       "id":"SPAN",
+        //       "name":"SPAN"
+        //    },
+        //    {
+        //       "id":"STAT",
+        //       "name":"STAT"
+        //    },
+        //    {
+        //       "id":"SWA",
+        //       "name":"SWA"
+        //    },
+        //    {
+        //       "id":"SWED",
+        //       "name":"SWED"
+        //    },
+        //    {
+        //       "id":"TAGLG",
+        //       "name":"TAGLG"
+        //    },
+        //    {
+        //       "id":"URBDP",
+        //       "name":"URBDP"
+        //    },
+        //    {
+        //       "id":"VIET",
+        //       "name":"VIET"
+        //    }
+        // ]
+        // Departments.insert({
+        //     institute: "uw.edu",
+        //     campus: "seattle",
+        //     departments: departments
+        // });
 
         /********************* courses ****************************/
         var courses = [
