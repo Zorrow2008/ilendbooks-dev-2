@@ -516,93 +516,84 @@ Meteor.startup(function() {
         //       "name":"VIET"
         //    }
         // ]
-        // Departments.upsert({
+        // Departments.insert({
         //     institute: "uw.edu",
         //     campus: "seattle",
         //     departments: departments
-        // },{
-        //     $set: {
-        //         departments: departments
-        //     }
-        //   }        
-        // );
+        // });
 
         /********************* courses ****************************/
-        // var courses = [
-        //    {
-        //       "id":"AA310",
-        //       "name":"AA310",
-        //       "sections":[
-        //          {
-        //             "id":"10016",
-        //             "name":"A",
-        //             "instructor":null
-        //          },
-        //          {
-        //             "id":"10017",
-        //             "name":"B",
-        //             "instructor":null
-        //          }
-        //       ]
-        //    },
-        //    {
-        //       "id":"AA402",
-        //       "name":"AA402",
-        //       "sections":[
-        //          {
-        //             "id":"10034",
-        //             "name":"A",
-        //             "instructor":null
-        //          }
-        //       ]
-        //    },
-        //    {
-        //       "id":"AA405",
-        //       "name":"AA405",
-        //       "sections":[
-        //          {
-        //             "id":"10035",
-        //             "name":"A",
-        //             "instructor":null
-        //          }
-        //       ]
-        //    },
-        //    {
-        //       "id":"AA501",
-        //       "name":"AA501",
-        //       "sections":[
-        //          {
-        //             "id":"999999",
-        //             "name":"A",
-        //             "instructor":null
-        //          }
-        //       ]
-        //    },
-        //    {
-        //       "id":"AA504",
-        //       "name":"AA504",
-        //       "sections":[
-        //          {
-        //             "id":"10050",
-        //             "name":"A",
-        //             "instructor":null
-        //          },
-        //          {
-        //             "id":"10051",
-        //             "name":"B",
-        //             "instructor":null
-        //          }
-        //       ]
-        //    }
-        // ];
-        // Courses.upsert({
-        //   department: "AA",
-        //   courses: courses
-        // },{
-        //     $set: {
-        //         courses: courses
-        //     }
-        //   })
+        var courses = [
+           {
+              "id":"AA310",
+              "name":"AA310",
+              "sections":[
+                 {
+                    "id":"10016",
+                    "name":"A",
+                    "instructor":null
+                 },
+                 {
+                    "id":"10017",
+                    "name":"B",
+                    "instructor":null
+                 }
+              ]
+           },
+           {
+              "id":"AA402",
+              "name":"AA402",
+              "sections":[
+                 {
+                    "id":"10034",
+                    "name":"A",
+                    "instructor":null
+                 }
+              ]
+           },
+           {
+              "id":"AA405",
+              "name":"AA405",
+              "sections":[
+                 {
+                    "id":"10035",
+                    "name":"A",
+                    "instructor":null
+                 }
+              ]
+           },
+           {
+              "id":"AA501",
+              "name":"AA501",
+              "sections":[
+                 {
+                    "id":"999999",
+                    "name":"A",
+                    "instructor":null
+                 }
+              ]
+           },
+           {
+              "id":"AA504",
+              "name":"AA504",
+              "sections":[
+                 {
+                    "id":"10050",
+                    "name":"A",
+                    "instructor":null
+                 },
+                 {
+                    "id":"10051",
+                    "name":"B",
+                    "instructor":null
+                 }
+              ]
+           }
+        ];
+        Courses.insert({
+          department: "AA",
+          courses: courses
+        })
 
         /********************* textbooks ****************************/
         var textbooksArray = [
@@ -621,14 +612,10 @@ Meteor.startup(function() {
             copyright: "1971"}
         ]
 
-        Textbooks.upsert({
+        Textbooks.insert({
           course: "AA310",
           textbooks: textbooksArray
-        },{
-            $set: {
-                textbooks: textbooksArray
-            }
-          })
+        })
 
         /********************* start ****************************/
         var statusMeta = [{
