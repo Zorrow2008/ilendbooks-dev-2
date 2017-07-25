@@ -1,8 +1,8 @@
 
 .profile-card {
     background-color: #222222;
-    margin-bottom: -99999px;
-    padding-bottom: 99999px;
+    margin-bottom: 20px;
+  
 		}
 		
 .profile-pic {
@@ -55,7 +55,12 @@
 .profile-card:hover .profile-info hr  {
 	opacity: 1;
 		}
-		
+
+.book {
+width: 500px;
+height: 500px;
+background-color: blue; 
+}
 		
 		
 		
@@ -71,6 +76,7 @@
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   overflow: hidden;
+  font-size: 150%;
 }
 .hvr-underline-from-center:before {
   content: "";

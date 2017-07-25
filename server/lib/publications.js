@@ -64,3 +64,8 @@ Meteor.publish('textbooks', function() {
 Meteor.publish('quarterTracker', function() {
 	return QuarterTracker.find();
 })
+
+Meteor.publish('bookRef', function() {
+	return BookRef.find();
+})
+

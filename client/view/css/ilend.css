@@ -32,20 +32,18 @@
   color: black;
   display: inline-block; /* Inline elements with width and height. TL;DR they make the icon buttons stack from left-to-right instead of top-to-bottom */
   position: relative; /* All 'absolute'ly positioned elements are relative to this one */
-  padding: 5px 5px 5px 5px; /* Add some padding so it looks nice */
+  padding: 10px 5px 5px 5px; /* Add some padding so it looks nice */
   font-size: 22px;
 }
 
 .button_badge {
   background-color: #fa3e3e;
-  border-radius: 4px;
+  border-radius: 3px;
   color: white;
- 
-  padding: 1px 3px;
+  padding: 0px 4px;
   font-size: 10px;
-  
   position: absolute; /* Position the badge within the relatively positioned button */
-  margin-top: 7px;
+  margin-top: 5px;
   top:0;
   right: 0;
 }
@@ -65,6 +63,29 @@
   display: none;
 }
 
+.navbar-default{
+  font-weight: 400
+}
+
+.navbar-brnd-name{
+  padding-top: 18px;
+  padding-left: 100px;
+}
+
+.navbar-search{
+  padding-top: 13px;
+}
+
+.navbar-search-hide {
+  display: none;
+}
+
+.search-result-btn-links{
+    font-size: 18px;
+    margin: 0 7px;
+}
+
+
 /*@media (max-width: 768px) {
 	.button_for_badge {
   		color: black;
@@ -77,6 +98,10 @@
 
 /* Extra small devices (portrait phones, less than 576px)*/
 @media (max-width: 575px) {
+
+  .navbar-brnd-name{
+    padding-left: 20px;
+  }
 
   .navbar-brand {
     color: black;

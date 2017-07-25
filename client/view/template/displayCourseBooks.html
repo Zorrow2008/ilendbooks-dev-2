@@ -1,6 +1,6 @@
 <template name="displayCourseBooks">
 <div class="container-fluid">
-    <div class="row">
+<!--     <div class="row">
       <div class="col-md-2 col-xs-1"> <b> Course </b></div>
       <div class="col-md-2 col-xs-2 pull-right"> <b>Action</b></div>     
       <div class="col-md-2 col-xs-2 pull-right"> <b>Action</b></div>
@@ -8,28 +8,103 @@
       <div class="col-md-2 col-xs-2 pull-right"> <b>Textbook quantity available</b> </div>
       <div class="col-md-2 col-xs-2 pull-right"> <b>Textbook title</b> </div>
       
-    </div>
-    {{#each getCourses}}
+    </div> -->
+<!--     {{#each getCourses}}
       <div class="row">
        <div class="col-md-1 col-xs-1">{{this}}</div>
        {{#each getTextbooks this}}
         <div class="row">
-          <div class="col-md-2 col-xs-2 pull-right"> <button type="button" class="btn btn-primary btn-sm">I want it</button> </div>
-          <div class="col-md-2 col-xs-2 pull-right"> <button type="button" class="btn btn-primary btn-sm">I have it</button> </div>
+        {{#if isLendTurn}}
+            <div class="col-md-2 col-xs-2 pull-right"> <button type="button" class="btn btn-primary btn-sm lend">I have it</button> </div>
+        {{else}}
+            <div class="col-md-2 col-xs-2 pull-right"> <button type="button" class="btn btn-primary btn-sm">I want it</button> </div>
+        {{/if}}
           
           <div class="col-md-2 col-xs-2 pull-right"> 50 BookCoin </div>
           <div class="col-md-2 col-xs-2 pull-right"> 5 </div>
-          <div class="col-md-2 col-xs-2 pull-right"> {{title}} </div>
+          <div class="col-md-2 col-xs-2 pull-right"> {{getTitle ilendbooksId}} </div>
+
+        </div>
+        {{/each}}
+        </div>
+    {{/each}} -->
+<!--         {{#each getCourses}}
+      <div class="row">
+       <div class="col-md-1 col-xs-1">{{this}}</div>
+       {{#each getTextbooks this}}
+        <div class="row">
+        {{#if isLendTurn}}
+            <div class="col-md-2 col-xs-2 pull-right"> <button type="button" class="btn btn-primary btn-sm lend">I have it</button> </div>
+        {{else}}
+            <div class="col-md-2 col-xs-2 pull-right"> <button type="button" class="btn btn-primary btn-sm">I want it</button> </div>
+        {{/if}}
+          
+          <div class="col-md-2 col-xs-2 pull-right"> 50 BookCoin </div>
+          <div class="col-md-2 col-xs-2 pull-right"> 5 </div>
+          <div class="col-md-2 col-xs-2 pull-right"> {{getTitle ilendbooksId}} </div>
 
         </div>
         {{/each}}
         </div>
     {{/each}}
+ -->
 	
 	<div class="row">
 		<button type="button" class="btn btn-primary btn-sm pull-right finished">Finished?</button>
 	</div>
-</div>
+</div>  
+            {{#each getCourses}}
+            <div class="col-md-4 col-sm-6">
+             <div class="card-container">
+                <div class="card">
+                    <div class="front">
+                        <div class="cover">
+                           <img src="img/courses.png"/>
+                           {{this}}
+                        </div>
+                    </div> <!-- end front panel -->
+
+                    <div class="back">
+                        <div class="header">
+                            <h5 class="motto">{{getTitle ItemAttributes}}</h5>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                             {{#each getTextbooks this}}
+                             <b>Textbook title</b> - {{getTitle ilendbooksId}}<br>
+                                 <b>Textbook price</b> - 50 BookCoin <br>
+                                 <b>Textbook quantity</b> - 5<br>
+                                 
+                               {{#if isLendTurn}}
+                                    <div class=""> <button type="button" class="btn btn-primary btn-sm lend">I have it</button> </div>
+                                {{else}}
+                                    <div class=""> <button type="button" class="btn btn-primary btn-sm borrow">I want it</button> </div>
+                                {{/if}}
+
+                              {{/each}}
+                            </div>
+                        </div>
+
+                        <div class="footer">
+
+                      <div class="search-result-btn-links text-center">
+                          
+                      </div>
+            
+            
+
+<!--                             <div class="social-links text-center">
+                                <a href="http://creative-tim.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                                <a href="http://creative-tim.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+                                <a href="http://creative-tim.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+                            </div> -->
+                        </div>
+                    </div> <!-- end back panel -->
+                </div> <!-- end card -->
+            </div> <!-- end card-container -->
+          </div>
+          {{/each}}
+        <!-- end col sm 3 -->
 </template>
 
 <!-- Notes:

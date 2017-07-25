@@ -37,12 +37,12 @@ Template.findCourses.helpers({
 
 	getDepartments: function() {
 		console.log("getDepartments called")
-		var deps = (Departments.findOne().departments);
-		return Departments.findOne().departments;
+		var deps = Departments.find();
+		return Departments.find();
 	},
 
-	getCourses: function() {
-		var courseDoc = Courses.findOne({department: "AA"});
+	getCourses: function(department) {
+		var courseDoc = Courses.findOne({departmentId: department});
 		console.log("getCourses called");
 		return courseDoc.courses;
 	},

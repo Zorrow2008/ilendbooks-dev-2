@@ -6,9 +6,13 @@
               <hr style="color: white">
               
              <div class="container">
-              {{#each getSearchResults}}
-                  {{>searchResult}}
-              {{/each}}
+                  <div class="col-lg-12">
+                      <div>
+                          {{#each getSearchResults}}
+                              {{>searchResult}}
+                          {{/each}}
+                      </div>
+                  </div>
               </div>
         </div>
 </summary>

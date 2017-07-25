@@ -28,10 +28,10 @@
          <option value="MATH308">MATH308</option>
       </select> -->
       
-      <select class="selectpicker" multiple data-live-search="true" data-size="5">
+      <select class="selectpicker" multiple data-live-search="true" data-size="5" data-width="75%">
 		 {{#each getDepartments}}
-          <optgroup label="{{name}}">
-          		{{#each getCourses}}
+          <optgroup label="Courses for: {{name}}">
+          		{{#each getCourses id}}
          				<option value="{{name}}">{{name}}</option>
           		{{/each}}
     	  </optgroup>

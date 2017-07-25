@@ -1,130 +1,103 @@
 <template name="searchResult">
-<!-- {{#if isAllowedProductGroup ItemAttributes}}
-      <div class="row">&nbsp;<br>&nbsp;<br>&nbsp;</div>
-      <div class="row">
-         <div class="col-sm-3">
-            {{#if hasLender}}
-               <span class="cardd-banner"></span>
-            {{/if}}   
-            <img class="img-responsive img-border  center-block" src="{{imageFormatterOne}}{{getLargeImage LargeImage}}" alt=""><br>
-         </div>
 
-         <div  class="col-sm-6">
-            Title - {{getTitle ItemAttributes}}<br>
-            Author - {{getAuthor ItemAttributes}}<br>
-            No of pages - {{getNumberOfPages ItemAttributes}}<br>
-            Publisher - {{getPublisher ItemAttributes}}<br>
-            Edition - {{getEdition ItemAttributes}}<br>
-            ISBN - {{getISBN ItemAttributes}}<br>
-            Publication Date - {{getPublicationDate ItemAttributes}}<br>
-            Media- {{getProductGroup ItemAttributes}}<br><br>
-         </div>
-         <div class="col-sm-3">
-            {{#if isVerifiedUser}}   
-               {{#if hasClickedLend}} 
-                  <div>
-                     <a class="btn btn-info btn-sm  center-block  ownThisBook" role="button">You own this book</a> <br>
-                  </div>
-                  <div>
-                     <a id="not-new-lender-{{ilendbooksId}}" class="btn btn-warning btn-sm center-block notNewLender"  role="button">In your shelf</a><br>
-                  </div>
-               {{else}}
-               <div >
-                  {{#if hasLender}}
-                     <div class="text-right" >
-                        <span class="lend-lender-available">☆ Lender Available</span>
-                     </div>
-                     <div>
-                     {{#if hasEnoughBookCoin}}
-                        <a id="borrow-{{ilendbooksId}}" class="btn btn-outline btn-sm center-block borrow" href="{{pathFor 'specificBookPage'}}"  role="button"> <i class="fa fa-heart" aria-hidden="true"></i> to borrow</a><br>
-                     {{else}}
-                     <a id="lend-{{ilendbooksId}}" class="btn btn-outline btn-sm center-block lend disabled"  role="button">Not enough <i class="fa fa-money " aria-hidden="true"></i></a><br>
-                     {{/if}}
-                     </div>
-                  {{else}}   
-                     {{#if isInBorrowWishList}}
-                     <div class="text-right" >
-                        <span class="lend-lender-available">☆ Will notify on lender found</span>
-                     </div>
-                        <div>
-                           <a id="borrow-{{ilendbooksId}}" class="btn btn-primary btn-sm center-block inBorrowWishList" role="button"> In <i class="fa fa-heart" aria-hidden="true"></i></a><br>
+
+         <div class="col-md-4 col-sm-6">
+             <div class="card-container">
+                <div class="card">
+                    <div class="front">
+                        <div class="cover">
+                            <img src="{{getLargeImage LargeImage}}"/>
                         </div>
-                     {{else}}
-                        <div>
-                       
-                           <a id="borrow-{{ilendbooksId}}" class="btn btn-outline btn-sm center-block addToBorrowWishList" role="button"> Add to <i class="fa fa-heart" aria-hidden="true"></i></a><br>
-
+<!--                         <div class="user">
+                            <img class="img-circle" src="images/rotating_card_profile3.png"/>
+                        </div> -->
+<!--                         <div class="content">
+                            <div class="main">
+                                <h3 class="name">John Marvel</h3>
+                                <p class="profession">CEO</p>
+                                <p class="text-center">"I'm the new Sinatra, and since I made it here I can make it anywhere, yeah, they love me everywhere"</p>
+                            </div>
+                            <div class="footer">
+                                <i class="fa fa-mail-forward"></i> Auto Rotation
+                            </div>
+                        </div> -->
+                    </div> <!-- end front panel -->
+                    <div class="back">
+                        <div class="header">
+                            <h5 class="motto">{{getTitle ItemAttributes}}</h5>
                         </div>
-                     {{/if}}
-
-                  {{/if}}
-               </div>
-               <div>
-                  
-                  <a id="lend-{{ilendbooksId}}" class="btn btn-outline btn-sm center-block lend"  role="button"><i class="fa fa-heart" aria-hidden="true"></i> to lend</a><br>
-
-               </div>   
-               {{/if}}
-               <div>
-                  <a id="{{ilendbooksId}}" class="btn btn-outline btn-sm center-block toAmazon" href="{{DetailPageURL}}" role="button">Buy on <i class="fa fa-amazon" aria-hidden="true"></i></a><br>
-               </div>
-
-            {{else}}
-               <a class="btn btn-default btn-sm center-block  notVerifiedUser" role="button"><i class="fa fa-heart" aria-hidden="true"></i> to borrow</a><br>
-               <a class="btn btn-default btn-sm center-block  notVerifiedUser" role="button"><i class="fa fa-heart" aria-hidden="true"></i> to lend</a> <br>                     
-               <a id="{{ilendbooksId}}" class="btn btn-outline btn-sm center-block toAmazon" href="{{DetailPageURL}}" role="button">Buy on <i class="fa fa-amazon" aria-hidden="true"></i></a>
-            {{/if}}
-         </div>
-   </div>
-   {{/if}} -->
-   {{#if isAllowedProductGroup ItemAttributes}}
-     
-              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- bootsnipp Circle Menu -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-5715866801509976"
-                 data-ad-slot="3922266447"
-                 data-ad-format="auto"></ins>
-            <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-            <br>
-            <br>
-                
-                  <div>
-
-                    
-                    <div class="col-sm-4">
-                      <div class="profile-card text-center">
-
-                        <img class="img-responsive" src="https://images.unsplash.com/photo-1454678904372-2ca94103eca4?crop=entropy&fit=crop&fm=jpg&h=975&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1925">
-                        
-                        <!-- <img class="img-responsive img-border  center-block" src="{{imageFormatterOne}}{{getLargeImage LargeImage}}" alt=""> -->
-                        <div class="profile-info">
-
-                          <img class="profile-pic" src="https://pbs.twimg.com/profile_images/711000557742395396/jzm8hqwW.jpg">
-
-                          <h2 class="hvr-underline-from-center">{{getTitle ItemAttributes}}<span>{{getAuthor ItemAttributes}}</span></h2>
-                          <div>Publisher - {{getPublisher ItemAttributes}}<br>
-                              Edition - {{getEdition ItemAttributes}}<br>
-                              ISBN - {{getISBN ItemAttributes}}<br>
-                              Publication Date - {{getPublicationDate ItemAttributes}}<br>
-                              Media- {{getProductGroup ItemAttributes}}<br><br></div>
-                          <a href="http://www.twitter.com/mike_youngg"><i class="fa fa-twitter fa-2x"></i></a>
-                          <a href="mailto:michael_y@live.co.uk"><i class="fa fa-envelope-o fa-2x"></i></a>
-                          <a href="http://www.linkedin.com"><i class="fa fa-linkedin fa-2x"></i></a>
+                        <div class="content">
+                            <div class="main">
+           
+                                 Author - {{getAuthor ItemAttributes}}<br>
+                                 No of pages - {{getNumberOfPages ItemAttributes}}<br>
+                                 Publisher - {{getPublisher ItemAttributes}}<br>
+                                 Edition - {{getEdition ItemAttributes}}<br>
+                                 ISBN - {{getISBN ItemAttributes}}<br>
+                                 Publication Date - {{getPublicationDate ItemAttributes}}<br>
+                                Media- {{getProductGroup ItemAttributes}}<br>
+                          {{#if isInBorrowWishList}}
+                            <div >
+                              <span class="lend-lender-available">☆ Will notify on lender found</span>
+                            </div>
+                          {{/if}}
+                          {{#if hasLender}}
+                            <div class="text-right" >
+                              <span class="lend-lender-available">☆ Lender Available</span>
+                            </div>
+                          {{/if}}
+                            </div>
                         </div>
 
-                      </div>
-                    </div>
-                  </div>
-                
-              
-       
-              
-            
-        {{/if}}
+                        <div class="footer">
+
+                      <div class="search-result-btn-links text-center">
+                          {{#if isVerifiedUser}}
+                             {{#if hasClickedLend}} 
+                                   <a class="btn btn-info btn-sm ownThisBook" role="button">Own it</a>
+                                   <a id="not-new-lender-{{ilendbooksId}}" class="btn btn-warning btn-sm  notNewLender"  role="button">In shelf</a>
+                             {{else}}
+
+                                {{#if hasLender}}
+                                   {{#if hasEnoughBookCoin}}
+                                      <a id="borrow-{{ilendbooksId}}" class="btn btn-primary btn-sm  borrow" href="{{pathFor 'specificBookPage'}}"  role="button"> <i class="fa fa-heart" aria-hidden="true"></i> to borrow</a>
+                                   {{else}}
+                                   <a id="lend-{{ilendbooksId}}" class="btn btn-outline btn-sm lend disabled"  role="button">Not enough <i class="fa fa-money " aria-hidden="true"></i></a>
+                                   {{/if}}
+
+                                {{else}}   
+                                   {{#if isInBorrowWishList}}
+              <!--                      <div class="text-right" >
+                                      <span class="lend-lender-available">☆ Will notify on lender found</span>
+                                   </div>
+               -->
+                                    <a id="borrow-{{ilendbooksId}}" class="btn btn-primary btn-sm inBorrowWishList" role="button"> In <i class="fa fa-heart" aria-hidden="true"></i></a>
+
+                                   {{else}}
+                                         <a id="borrow-{{ilendbooksId}}" class="btn btn-info btn-sm addToBorrowWishList" role="button"> Add to <i class="fa fa-heart" aria-hidden="true"></i></a>
+                                   {{/if}}
+                                {{/if}}
+
+                                <a id="lend-{{ilendbooksId}}" class="btn btn-warning btn-sm lend"  role="button"><i class="fa fa-heart" aria-hidden="true"></i> to lend</a>
+                             {{/if}}
+                                <a id="{{ilendbooksId}}" class="btn btn-primary btn-sm toAmazon" href="{{DetailPageURL}}" role="button">Buy on <i class="fa fa-amazon" aria-hidden="true"></i></a>
+                          {{else}}
+                             <a class="btn btn-info btn-sm  notVerifiedUser" role="button"><i class="fa fa-heart" aria-hidden="true"></i> borrow</a>
+                             <a class="btn btn-warning btn-sm  notVerifiedUser" role="button"><i class="fa fa-heart" aria-hidden="true"></i> lend</a>      
+                             <a id="{{ilendbooksId}}" class="btn btn-primary btn-sm toAmazon" href="{{DetailPageURL}}" role="button">Buy <i class="fa fa-amazon" aria-hidden="true"></i></a>
+                          {{/if}}
+                       </div>
+
+<!--                             <div class="social-links text-center">
+                                <a href="http://creative-tim.com" class="facebook"><i class="fa fa-facebook fa-fw"></i></a>
+                                <a href="http://creative-tim.com" class="google"><i class="fa fa-google-plus fa-fw"></i></a>
+                                <a href="http://creative-tim.com" class="twitter"><i class="fa fa-twitter fa-fw"></i></a>
+                            </div> -->
+                        </div>
+                    </div> <!-- end back panel -->
+                </div> <!-- end card -->
+            </div> <!-- end card-container -->
+        </div> <!-- end col sm 3 -->
+
+
 </template>
-<!-- ilend-disabled-btn
-ilend-disabled-btn -->

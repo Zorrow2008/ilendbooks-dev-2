@@ -14,6 +14,17 @@ Template.searchResults.helpers({
    isUser:function() {
       var userProfile = UserProfile.findOne({userId: Meteor.userId()});
       return userProfile;
+   },
+
+   getRowStartEnd:function(index) {
+    var result = "";
+    if (index === 0){
+      result = "<div>";
+    } else if (index % 4 === 0) {
+      result = "</div><div>";
+    } 
+    console.log(`getRowStartEnd:result=${result}`);
+    return result;
    }
 })
 

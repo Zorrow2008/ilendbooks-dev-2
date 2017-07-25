@@ -17,6 +17,25 @@
 				// }
 				// var books = HTTP.get("http://uw-seattle.verbacompare.com/comparison?id=10016", courses.headers);
 				// return books;
+							var departments = Departments.find({});
+			var coursesPerDepartment;
+			departments.forEach(function (department) {
+					
+					console.log("key: " + department + "value: " + department.name);
+					coursesPerDepartment = HTTP.get("http://uw-seattle.verbacompare.com/compare/courses/?id=" + department.name + "&term_id=AUTUMN").data;
+			        Courses.upsert({
+			          departmentId: department.id,
+			          departmentName: department.name,
+			          courses: coursesPerDepartment
+			        },{
+			            $set: {
+			            	department: department.name,
+			                courses: coursesPerDepartment
+			            }
+			          })
+				})
+
+				return coursesPerDepartment;
 				}
 			}
 
