@@ -58,9 +58,9 @@ Template.findCourses.events({
 	    event.preventDefault();
 	    var classes = $('select.selectpicker').val()
 	    console.log("did i get here");
-	    for(var key in classes) {
-	      console.log("key " + key + "value: " + classes[key]);
-	    }
+	    // for(var key in classes) {
+	    //   console.log("key " + key + "value: " + classes[key]);
+	    // }
 	    Session.set('classes', classes);
 	    var quarterInfo = {
 	    	userId: Meteor.userId(),
