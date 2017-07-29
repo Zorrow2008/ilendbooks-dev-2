@@ -4,20 +4,25 @@
         <div class="container margin-top-50px">
               <h2 class="intro-text text-center">My book shelf</h2>
               <hr style="color: white">
-              {{#if hasBooks}}
-                {{#each getLentBooks}}
-                    {{#if isNotDelete status}}
-                      {{>bookInfo}}
+             <div class="container">
+               <div class="col-lg-12">
+                {{#if hasBooks}}
+                 {{#each getLentBooks}}
+                      {{#if isNotDelete status}}
+                        {{>bookInfo}}
 <!--                       {{#if isTransactionCompleteLender status}} 
                           <p align="left"> Click <a class="borrowerReview" role="button"> here </a> to give the borrower a review. </p> 
                       {{/if}} -->
                     {{/if}}
                 {{/each}}
                {{else}} 
+
                   <div class="col-sm-6 col-sm-offset-3 text-center">
                         <h3> Your book shelf is empty, please <a href="{{pathFor route='userHome'}}">search</a> for books and add.</h3>
                     </div>
                {{/if}}
+                  </div>
+               </div>
         </div>
 </summary>
 
