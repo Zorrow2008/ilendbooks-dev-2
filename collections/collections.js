@@ -44,3 +44,5 @@ Courses = new Mongo.Collection("courses");
 Textbooks = new Mongo.Collection("textbooks");
 
 BookRef = new Mongo.Collection("bookRef");
+
+TempIlend = new Mongo.Collection("TempIlend");
