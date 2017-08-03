@@ -38,7 +38,7 @@
 						result.headers = departments.headers;
 						result.dataSize =  departments.data.length;
 
-						if (departments.data.slength ===1) {
+						if (departments.data.length ===1) {
 							result.data = departments.data;
 						} else {
 							console.log("calling upsertDepartments ...")

@@ -19,8 +19,10 @@ Template.findCourses.helpers({
 
 	isNotFirstTime: function() {
 		var userDoc = UserProfile.findOne({userId: Meteor.userId()});
-		if(userDoc != null) {
-			return userDoc.isFirstLend;
+		if(userDoc.isFirstLend ) {
+			return ! userDoc.isFirstLend;
+		} else {
+			return false;
 		}
 	},
 
@@ -41,10 +43,9 @@ Template.findCourses.helpers({
 		return Departments.find();
 	},
 
-	getCourses: function(department) {
-		var courseDoc = Courses.findOne({departmentId: department});
-		console.log("getCourses called");
-		return courseDoc.courses;
+	getCourses: function(departmentId) {
+		console.log("getCourses:departmentId=" +departmentId);
+		return  Courses.find({departmentId: departmentId});
 	},
 
 })
@@ -56,6 +57,7 @@ Template.findCourses.events({
 
     'submit form': function() {
 	    event.preventDefault();
+	    $("#findCoursesGreetings").addClass("display-none");
 	    var classes = $('select.selectpicker').val()
 	    console.log("did i get here");
 	    // for(var key in classes) {

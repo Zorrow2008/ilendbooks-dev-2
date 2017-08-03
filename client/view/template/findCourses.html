@@ -1,45 +1,40 @@
 <template name="findCourses">
-   <h3> Hi {{getUserName}} </h3>
-   {{#if isLender}}
-	   {{#if isFirstTime}}
-	   <p> It seems this is your first time using ilendbooks! <br>
-	      Earn some BookCoin by offering textbooks that you currently own! 
-	      Click below to list the courses you have taken at UW and we will find the textbooks you might have. 
-	      We hope you enjoy ilendbooks! 
-	   </p>
-	   {{/if}}
-	   {{#if isNotFirstTime}}
-		   <p> Earn some BookCoin by telling us what classes you took this last quarter. If you have the corresponding textbooks,
-		      lend them out to earn BookCoin! 
-	   </p>
-	   {{/if}}
-	   
-   {{else}}
-   		{{isBorrower}}
-   		<p> Please select your upcoming classes so we can try to find some books for you to borrow. </p>
-   {{/if}}
-   <form name="findCourses">
-      <h4 class="modal-title">Select your courses.</h4>
-<!--       <select class="selectpicker" multiple data-live-search="true" data-size="5">
-         <option value="CSE142">CSE142</option>
-         <option value="CSE143">CSE143</option>
-         <option value="CSE373">CSE373</option>
-         <option value="MATH307">MATH307</option>
-         <option value="MATH308">MATH308</option>
-      </select> -->
-      
-      <select class="selectpicker" multiple data-live-search="true" data-size="5" data-width="75%">
-		 {{#each getDepartments}}
-          <optgroup label="Courses for: {{name}}">
-          		{{#each getCourses id}}
-         				<option value="{{name}}">{{name}}</option>
-          		{{/each}}
-    	  </optgroup>
-	  	 {{/each}}
-      </select>      
-      <input type="submit" class="btn btn-success" id="findCourses" value="Submit">
-   </form>
+  <div id="findCoursesGreetings">
+     <h3>{{getUserName}}, </h3>
+     {{#if isLender}}
+  	   {{#if isFirstTime}}
+       <p>Congratulations!!!&nbsp;&nbsp;&nbsp;Your account has been created successfully and is ready to use. </p>
+  	   <p>Earn BookCoins by offering to lend textbooks that you own collecting dust to your fellow students!</p>
+  	   <p>  Click below to list the courses you have taken and we will find the textbooks you might have. 
+  	      We hope you enjoy ilendbooks! 
+  	   </p>
+  	   {{else}}
+  		   <p> Earn some BookCoin by telling us what classes you took this last quarter. If you have the corresponding textbooks,
+  		      lend them out to earn BookCoin! 
+  	   </p>
+  	   {{/if}}
+  	   
+     {{else}}
+     		{{isBorrower}}
+     		<p> Please select your upcoming classes so we can try to find some books for you to borrow. </p>
+     {{/if}}
+   </div>
+   <div >
+     <form name="findCourses">
+        <select class="selectpicker" multiple data-live-search="true" title="Select courses..." data-size="5" data-width="90%">
+    		 {{#each getDepartments}}
+              <optgroup label="Courses for: {{name}}">
+              		{{#each getCourses id}}
+             				<option value="{{courseId}}">{{courseName}}</option>
+              		{{/each}}
+        	  </optgroup>
+    	   {{/each}}
+        </select>      
+        <input type="submit" class="btn btn-success" id="findCourses" value="Submit">
+     </form>
+   </div>
    <script>
       $('select').selectpicker();
    </script>
+
 </template>
