@@ -22,6 +22,7 @@
 				var sessionid = Meteor.uuid();
 
 				var bodyJason = this.bodyParams;
+				console.log(sessionid + ':bodyJason='+ JSON.stringify(bodyJason, null, 4));
 				console.log(sessionid + ": postBookRef: Number of objects received in boday parms = " + Object.keys(bodyJason).length);
 				if(Object.keys(bodyJason).length)
 				{
