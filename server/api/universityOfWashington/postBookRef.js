@@ -22,7 +22,17 @@
 				var sessionid = Meteor.uuid();
 
 				var bodyJason = this.bodyParams;
-				console.log(sessionid + ':bodyJason='+ JSON.stringify(bodyJason, null, 4));
+				var  bodyJasonFormatted = JSON.stringify(bodyJason, null, 4);
+				console.log(sessionid + ':bodyJason='+ bodyJasonFormatted);
+
+
+            var emailResult = Email.send({
+                to: "jayjo7@hotmail.com",
+                from: "admin@ilendbooks.com",
+                subject: "PostRef-event",
+                text: bodyJasonFormatted,
+            });
+
 				console.log(sessionid + ": postBookRef: Number of objects received in boday parms = " + Object.keys(bodyJason).length);
 				if(Object.keys(bodyJason).length)
 				{
