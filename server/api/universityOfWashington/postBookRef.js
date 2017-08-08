@@ -22,6 +22,12 @@
 				var sessionid = Meteor.uuid();
 
 				var bodyJason = this.bodyParams;
+				var bookInfo = this.bodyParams.BookInfo;
+				console.log(sessionid + ':bookInfo='+ bookInfo);
+
+				for(bookInfoKey in bookInfo) {
+					console.log(sessionid + ':' +bookInfoKey +'=' +bookInfo[bookInfoKey]);
+				}
 				var  bodyJasonFormatted = JSON.stringify(bodyJason, null, 4);
 				console.log(sessionid + ':bodyJason='+ bodyJasonFormatted);
 
