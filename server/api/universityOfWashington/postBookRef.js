@@ -58,7 +58,7 @@ Api = new Restivus(
 									var bookRef = data[i];
 									iSBNArray.forEach (function (isbn){
 									console.log( sessionid + ":upserting isbn="	+ isbn);	
-									bookRef.ISBN = isbn;
+									bookRef.ISBN_individual = isbn;
 									upsertBookRef(data[i]);
 
 									});
