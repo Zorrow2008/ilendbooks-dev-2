@@ -1,4 +1,4 @@
-	Api = new Restivus(
+Api = new Restivus(
 	{
     	useDefaultAuth: false,
    	 	prettyJson: true
@@ -22,23 +22,7 @@
 				var sessionid = Meteor.uuid();
 
 				var bodyJason = this.bodyParams;
-				var bookInfo = this.bodyParams.BookInfo;
-				console.log(sessionid + ':bookInfo='+ bookInfo);
-
-				for(bookInfoKey in bookInfo) {
-					console.log(sessionid + ':' +bookInfoKey +'=' +bookInfo[bookInfoKey]);
-				}
-				var  bodyJasonFormatted = JSON.stringify(bodyJason, null, 4);
-				console.log(sessionid + ':bodyJason='+ bodyJasonFormatted);
-
-
-            var emailResult = Email.send({
-                to: "jayjo7@hotmail.com",
-                from: "admin@ilendbooks.com",
-                subject: "PostRef-event",
-                text: bodyJasonFormatted,
-            });
-
+				console.log(sessionid + ':bodyJason='+ JSON.stringify(bodyJason, null, 4));
 				console.log(sessionid + ": postBookRef: Number of objects received in boday parms = " + Object.keys(bodyJason).length);
 				if(Object.keys(bodyJason).length)
 				{
@@ -115,4 +99,3 @@
 			}
 		}
 	});
-
