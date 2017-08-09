@@ -11,7 +11,7 @@ upsertBookRef= function(bookRef){
 										, department:bookRef.Department
 										, course:bookRef.Course
 										, section:bookRef.Section
-										, ISBN:bookRef.ISBN
+										, ISBN:bookRef.ISBN_individual
 
 				}
 					, {$set: {			institution:bookRef.Institution
@@ -20,7 +20,7 @@ upsertBookRef= function(bookRef){
 										, department:bookRef.Department
 										, course:bookRef.Course
 										, section:bookRef.Section
-										, ISBN:bookRef.ISBN
+										, ISBN:bookRef.ISBN_individual
 										, createdAt: new Date()
 					}
 				});
