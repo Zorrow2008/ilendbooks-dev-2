@@ -57,10 +57,9 @@ Api = new Restivus(
 									var iSBNArray = data[i].ISBN.split('\n');
 									var bookRef = data[i];
 									iSBNArray.forEach (function (isbn){
-									console.log( sessionid + ":upserting isbn="	+ isbn);	
-									bookRef.ISBN_individual = isbn;
-									upsertBookRef(data[i]);
-
+										console.log( sessionid + ":upserting isbn="	+ isbn);	
+										bookRef.ISBN_individual = isbn;
+										upsertBookRef(sessionid, data[i]);
 									});
 								} else {
 							   		console.log(sessionid + ': postBookRef: Required ISBN is missing.');
@@ -70,7 +69,7 @@ Api = new Restivus(
 
 						   	}catch(e)
 						   	{   
-						   		console.log(sessionid + ': postBookRef: caught error on upderting...' + e);
+						   		console.log(sessionid + ': postBookRef: caught error on upserting...' + e);
 						   		result.status 		=  ilendbooks.public.status.FAILED;
 								result.error		=  e;
 						   	}

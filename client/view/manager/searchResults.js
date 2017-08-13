@@ -4,7 +4,10 @@ Template.searchResults.helpers({
       var searchResult = Session.get('SearchResult');
       return searchResult.results;    
    },
-//<<<<<<< HEAD
+
+   isSearchError: function() {
+    return Session.get('SearchResult').isError;
+   },
 
    isVerifiedUser: function() {
       var userProfile = UserProfile.findOne({userId: Meteor.userId()});
@@ -41,6 +44,4 @@ Template.searchResults.events({
        });
 	}
 
-   
-//>>>>>>> ba210b31acc8a5965af80cbc84097d1e1c53de42
 })

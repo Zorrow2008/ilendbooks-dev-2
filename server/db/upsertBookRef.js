@@ -1,6 +1,6 @@
-upsertBookRef= function(bookRef){
+upsertBookRef= function(sessionid, bookRef){
 
-	console.log("upsertBookRef:course=" + bookRef);
+	console.log(sessionid +":upsertBookRef:course=" + bookRef);
 
 	if(bookRef) {
 		try {
@@ -34,4 +34,4 @@ upsertBookRef= function(bookRef){
 		console.log("FATAL:upsertBookRef: one of the required parmanter is not present");
 		console.log("FATAL:upsertBookRef:course = " + course);
 	}
-}
+};
