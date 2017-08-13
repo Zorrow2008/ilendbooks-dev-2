@@ -17,7 +17,8 @@ Meteor.methods({
 	         contactPreference: userProfile.contactPreference,
 	         degree: userProfile.degree,
 	         bookcoin: ilendbooks.private.bitCoin.ACCOUT_CREATION,
-	         isFirstLend: true
+	         isFirstLend: true,
+	         createdAt: new Date()
       	});
   	}
 });

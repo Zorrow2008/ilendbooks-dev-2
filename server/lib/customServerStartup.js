@@ -42,43 +42,43 @@ Meteor.startup(function() {
                 }
         })
 
-        BookRef.upsert({
-            quarter: ilendbooks.public.quarters.AUTUMN,
-            department: "AA",
-            course: "AA310",
-            section: "A",
-            ISBN: 9780080977478,
-            ilendbooksId: "TPJkBjJnC4wzGJQLz"
-        }, {
-            $set: {
-                quarter: ilendbooks.public.quarters.AUTUMN,
-                department: "AA",
-                course: "AA310",
-                section: "A",
-                ISBN: 9780080977478,
-                ilendbooksId: "TPJkBjJnC4wzGJQLz"
-            }
-        }
-        )
+        // BookRef.upsert({
+        //     quarter: ilendbooks.public.quarters.AUTUMN,
+        //     department: "AA",
+        //     course: "AA310",
+        //     section: "A",
+        //     ISBN: 9780080977478,
+        //     ilendbooksId: "TPJkBjJnC4wzGJQLz"
+        // }, {
+        //     $set: {
+        //         quarter: ilendbooks.public.quarters.AUTUMN,
+        //         department: "AA",
+        //         course: "AA310",
+        //         section: "A",
+        //         ISBN: 9780080977478,
+        //         ilendbooksId: "TPJkBjJnC4wzGJQLz"
+        //     }
+        // }
+        // )
 
-        BookRef.upsert({
-            quarter: ilendbooks.public.quarters.AUTUMN,
-            department: "AA",
-            course: "AA310",
-            section: "A",
-            ISBN: 9780486600611,
-            ilendbooksId: "Hy24DuEAd2rszfpm7"
-        }, {
-            $set: {
-                quarter: ilendbooks.public.quarters.AUTUMN,
-                department: "AA",
-                course: "AA310",
-                section: "A",
-                ISBN: 9780486600611,
-                ilendbooksId: "Hy24DuEAd2rszfpm7"
-            }
-        }
-        )
+        // BookRef.upsert({
+        //     quarter: ilendbooks.public.quarters.AUTUMN,
+        //     department: "AA",
+        //     course: "AA310",
+        //     section: "A",
+        //     ISBN: 9780486600611,
+        //     ilendbooksId: "Hy24DuEAd2rszfpm7"
+        // }, {
+        //     $set: {
+        //         quarter: ilendbooks.public.quarters.AUTUMN,
+        //         department: "AA",
+        //         course: "AA310",
+        //         section: "A",
+        //         ISBN: 9780486600611,
+        //         ilendbooksId: "Hy24DuEAd2rszfpm7"
+        //     }
+        // }
+        // )
 
         /********************* start ****************************/
         var statusMeta = [{

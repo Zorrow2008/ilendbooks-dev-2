@@ -8,6 +8,12 @@ var client = amazon.createClient({
 
 Meteor.methods({
    itemSearch(appUUID, searchParameters) {
+    itemSearchCommon(appUUID, searchParameters);
+   }
+});
+
+
+itemSearchCommon = function (appUUID, searchParameters) {
       for(var searchParametersKey in searchParameters)
       {
          console.log(appUUID + ":searchParameters:" + searchParametersKey + "=" + searchParameters[searchParametersKey]);
@@ -16,7 +22,8 @@ Meteor.methods({
                appUUID: appUUID,
                title: searchParameters.title,
                author: searchParameters.author,
-               keyWords: searchParameters.keywords
+               keyWords: searchParameters.keywords,
+               isbn: searchParameters.isbn
       };
 
       var query ={
@@ -28,10 +35,13 @@ Meteor.methods({
          query.keywords = searchParameters.keywords;
          query.searchIndex = "All";
 
-      } else if (searchParameters.title && searchParameters.author) {
-         query.title = searchParameters.title
-         query.author = searchParameters.author
-         query.searchIndex = "Books";
+      } else if (searchParameters.isbn) {
+          query.keywords = searchParameters.isbn;
+          query.searchIndex = "Books";
+      }  else if (searchParameters.title && searchParameters.author) {
+          query.title = searchParameters.title
+          query.author = searchParameters.author
+          query.searchIndex = "Books";
       } else {
          console.log(appUUID +":No valid search parameters");
       }
@@ -65,7 +75,7 @@ Meteor.methods({
             //    console.log("currentDocKey=" + currentDocKey + " value=" + currentDoc[currentDocKey]);
             // }
                searchResult.results[searchResultKey].ilendbooksId = currentDoc["_id"];
-               console.log(appUUID + ":itemSearch:ilendID: " + searchResult.results[searchResultKey].ilendbooksId);
+               console.log(appUUID + ":itemSearchCommon:ilendID: " + searchResult.results[searchResultKey].ilendbooksId);
          }
 
          var stringifiedResults = JSON.stringify(searchResult, null, 4);
@@ -73,17 +83,18 @@ Meteor.methods({
                appUUID: appUUID,
                title: searchParameters.title,
                author: searchParameters.author,
-               keyWords: searchParameters.keywords
+               keyWords: searchParameters.keywords,
+               isbn: searchParameters.isbn
             },
             {
                $set: {results: searchResult.results}
             }
          );
          for(upsertResultKey in upsertResult) {
-            console.log(appUUID + ':itemSearch:upsertResult='+ upsertResult[upsertResultKey]);
+            console.log(appUUID + ':itemSearchCommon:upsertResult='+ upsertResult[upsertResultKey]);
          }
-         console.log(appUUID + ':itemSearch:isBccAdmin='+ isBccAdmin());
-         console.log(appUUID + ':itemSearch:isSmsAdmin='+ isSmsAdmin());
+         console.log(appUUID + ':itemSearchCommon:isBccAdmin='+ isBccAdmin());
+         console.log(appUUID + ':itemSearchCommon:isSmsAdmin='+ isSmsAdmin());
          if(isBccAdmin()) {
            // email sent is for debugging purpose only, can be commemted 
             var emailResult = Email.send({
@@ -92,7 +103,7 @@ Meteor.methods({
               subject: "itemSearch - result",
               text: stringifiedResults
            });
-            console.log(appUUID + ':itemSearch:Email sent')
+            console.log(appUUID + ':itemSearchCommon:Email sent')
           }
       }).catch(function(err){
             console.log(err);
@@ -100,13 +111,15 @@ Meteor.methods({
             SearchResult.upsert({
                 appUUID: appUUID,
                 title: searchParameters.title,
-               author: searchParameters.author,
-               keyWords: searchParameters.keywords
+                author: searchParameters.author,
+                keyWords: searchParameters.keywords,
+                isbn: searchParameters.isbn,
+                isError:true
             },    
             { 
                $set: {error: err }
             }
             );
          });
-   }
-});
+      return searchResult;
+}
