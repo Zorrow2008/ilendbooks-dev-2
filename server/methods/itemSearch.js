@@ -108,6 +108,7 @@ itemSearchCommon = function (appUUID, searchParameters) {
       }).catch(function(err){
             console.log(err);
             console.log('Stringified error object' + JSON.stringify(err, null, 4));
+            searchResult.isError=true;
             SearchResult.upsert({
                 appUUID: appUUID,
                 title: searchParameters.title,

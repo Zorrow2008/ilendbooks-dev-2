@@ -28,12 +28,23 @@
 							console.log( sessionid + ":api:syncIlendBooksId:" + key + "=" + searchResult[key]);	
 		
 						}
-						console.log( sessionid + ":api:syncIlendBooksId:searchResult.results[0]="	+ searchResult.results[0]);
-						var isbnAmazon = searchResult.results[0].ItemAttributes[0].ISBN[0];
-						console.log( sessionid + ":api:syncIlendBooksId:isbnAmazon="	+ isbnAmazon);
-						var ilendbooksId = searchResult.results[0].ilendbooksId;
-						console.log( sessionid + ":api:syncIlendBooksId:ilendbooksId="	+ ilendbooksId);
-						bookRefDb[bookRefDbKey].ilendBooksId = searchResult.results[0].ilendbooksId;
+						if(searchResult.error) {
+							for(var keyError in searchResult.error) {
+								console.log( sessionid + ":api:syncIlendBooksId:Error:" + keyError + "=" 
+									+ JSON.stringify(searchResult.error[keyError], null, 4));	
+							
+							}
+							bookRefDb[bookRefDbKey].ilendBooksId = "none";
+						} else {
+
+							console.log( sessionid + ":api:syncIlendBooksId:searchResult.isError" + searchResult.isError);
+							console.log( sessionid + ":api:syncIlendBooksId:searchResult.results[0]="	+ searchResult.results[0]);
+							var isbnAmazon = searchResult.results[0].ItemAttributes[0].ISBN[0];
+							console.log( sessionid + ":api:syncIlendBooksId:isbnAmazon="	+ isbnAmazon);
+							var ilendbooksId = searchResult.results[0].ilendbooksId;
+							console.log( sessionid + ":api:syncIlendBooksId:ilendbooksId="	+ ilendbooksId);
+							bookRefDb[bookRefDbKey].ilendBooksId = searchResult.results[0].ilendbooksId;
+						}
 
 						var result = {};
 						result.bookRefDb = bookRefDb[bookRefDbKey];
