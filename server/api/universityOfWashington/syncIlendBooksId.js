@@ -28,7 +28,7 @@
 							console.log( sessionid + ":api:syncIlendBooksId:" + key + "=" + searchResult[key]);	
 		
 						}
-						if(searchResult.error) {
+						if(searchResult.isError) {
 							for(var keyError in searchResult.error) {
 								console.log( sessionid + ":api:syncIlendBooksId:Error:" + keyError + "=" 
 									+ JSON.stringify(searchResult.error[keyError], null, 4));	
