@@ -6,7 +6,7 @@ updateBookRef= function(sessionid, bookRef){
 	if(bookRef) {
 		try {
 
-			BookRef.update({"_id" : bookRef._id},{$set:{"ilendBooksId":bookRef.ilendBooksId}});
+			BookRef.update({"_id" : bookRef._id},{$set:{"ilendbooksId":bookRef.ilendbooksId}});
 
 		} catch (err) {
 			console.log("Error:updateBookRef:err = " + err);

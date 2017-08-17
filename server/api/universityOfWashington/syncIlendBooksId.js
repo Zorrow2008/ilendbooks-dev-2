@@ -5,7 +5,7 @@
   	});
 
 
-  	Api.addRoute('syncIlendBooksId', {authRequired: false }, {
+  	Api.addRoute('syncilendbooksId', {authRequired: false }, {
 
 		get: {
 			action: function() {
@@ -31,17 +31,17 @@
 
 						var searchResult = SearchResult.findOne({"isbn" : bookRefDb[bookRefDbKey].ISBN});
 						for(var key in searchResult) {
-							console.log( sessionid + ":api:syncIlendBooksId:" + key + "=" + searchResult[key]);	
+							console.log( sessionid + ":api:syncilendbooksId:" + key + "=" + searchResult[key]);	
 		
 						}
 						if(searchResult) {
 							if(searchResult.isError) {
 								for(var keyError in searchResult.error) {
-									console.log( sessionid + ":api:syncIlendBooksId:Error:" + keyError + "=" 
+									console.log( sessionid + ":api:syncilendbooksId:Error:" + keyError + "=" 
 										+ JSON.stringify(searchResult.error[keyError], null, 4));	
 								
 								}
-								bookRefDb[bookRefDbKey].ilendBooksId = "none";
+								bookRefDb[bookRefDbKey].ilendbooksId = "none";
 							var errorItem ={
 								"message": "No item found",
 								"ISBN": bookRefDb[bookRefDbKey].ISBN,
@@ -51,17 +51,17 @@
 							errorlist.push(errorItem)
 							} else {
 
-								console.log( sessionid + ":api:syncIlendBooksId:searchResult.isError" + searchResult.isError);
-								console.log( sessionid + ":api:syncIlendBooksId:searchResult.results[0]="	+ searchResult.results[0]);
+								console.log( sessionid + ":api:syncilendbooksId:searchResult.isError" + searchResult.isError);
+								console.log( sessionid + ":api:syncilendbooksId:searchResult.results[0]="	+ searchResult.results[0]);
 								var isbnAmazon = searchResult.results[0].ItemAttributes[0].ISBN[0];
-								console.log( sessionid + ":api:syncIlendBooksId:isbnAmazon="	+ isbnAmazon);
+								console.log( sessionid + ":api:syncilendbooksId:isbnAmazon="	+ isbnAmazon);
 								var ilendbooksId = searchResult.results[0].ilendbooksId;
-								console.log( sessionid + ":api:syncIlendBooksId:ilendbooksId="	+ ilendbooksId);
-								bookRefDb[bookRefDbKey].ilendBooksId = searchResult.results[0].ilendbooksId;
+								console.log( sessionid + ":api:syncilendbooksId:ilendbooksId="	+ ilendbooksId);
+								bookRefDb[bookRefDbKey].ilendbooksId = searchResult.results[0].ilendbooksId;
 							}
 						} else {
-							console.log( sessionid + ":api:syncIlendBooksId:No Search result for ISBN " + bookRefDb[bookRefDbKey].ISBN);
-							bookRefDb[bookRefDbKey].ilendBooksId = "none";
+							console.log( sessionid + ":api:syncilendbooksId:No Search result for ISBN " + bookRefDb[bookRefDbKey].ISBN);
+							bookRefDb[bookRefDbKey].ilendbooksId = "none";
 							var errorItem ={
 								"message": "No Search result",
 								"ISBN": bookRefDb[bookRefDbKey].ISBN,
@@ -75,14 +75,14 @@
 						result.bookRefDb = bookRefDb[bookRefDbKey];
 
 
-						console.log(sessionid+":api:syncIlendBooksId:calling updateBookRef ...")
+						console.log(sessionid+":api:syncilendbooksId:calling updateBookRef ...")
 						updateBookRef(sessionid, bookRefDb[bookRefDbKey]);
 						
 						resultArray.push(result);
 
 					}
 				} catch (err) {
-					console.log(sessionid+":api:syncIlendBooksId:" + err)
+					console.log(sessionid+":api:syncilendbooksId:" + err)
 					results = {
 						status: ilendbooks.public.status.FAILED,
 						error: err,
@@ -94,7 +94,7 @@
 		      var emailResult = Email.send({
               to: "jayjo7@hotmail.com",
               from: "ilendbooks<admin@ilendbooks.com>",
-              subject: "SyncIlendBooksId - result",
+              subject: "SyncilendbooksId - result",
               text: JSON.stringify(errorlist, null, 4)
            });
 		return results;

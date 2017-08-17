@@ -57,24 +57,25 @@
 </div>  
 </div>  
             {{#each getCourses}}
+            {{#each getTextbooks this}}
             <div class="col-md-4 col-sm-6">
              <div class="card-container">
                 <div class="card">
                     <div class="front">
                         <div class="cover">
-                           <img src="img/courses.png"/>
-                           {{this}}
+                           <img class="img-responsive  img-border margin-top center-block" src="{{getImage ilendbooksId}}" alt="">
+                           
                         </div>
                     </div> <!-- end front panel -->
-
+                    <!-- {{getImage ilendbooksId}} -->
                     <div class="back">
                         <div class="header">
-                            <h5 class="motto">{{getTitle ItemAttributes}}</h5>
+                            <!-- <h5 class="motto">{{getTitle ItemAttributes}}</h5> -->
                         </div>
                         <div class="content">
                             <div class="main">
-                             {{#each getTextbooks this}}
-                             <b>Textbook title</b> - {{getTitle ilendbooksId}}<br>
+                             
+                             <b>Textbook title</b> - {{getTitle ilendBooksId}}<br>
                                  <b>Textbook price</b> - 50 BookCoin <br>
                                  <b>Textbook quantity</b> - 5<br>
                                  
@@ -84,7 +85,7 @@
                                     <div class=""> <button type="button" class="btn btn-primary btn-sm borrow">I want it</button> </div>
                                 {{/if}}
 
-                              {{/each}}
+                              
                             </div>
                         </div>
 
@@ -107,7 +108,9 @@
             </div> <!-- end card-container -->
           </div>
           {{/each}}
+          {{/each}}
         <!-- end col sm 3 -->
+
 </template>
 
 <!-- Notes:

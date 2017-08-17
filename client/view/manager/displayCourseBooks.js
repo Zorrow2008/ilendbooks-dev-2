@@ -11,7 +11,8 @@ Template.displayCourseBooks.helpers({
 	    // for(var key in books ) {
 	    // 	console.log("key: " + key + ", value: " + books[key]);
 	    // }
-	    return BookRef.find({course: course});
+
+	    return books;
   	},
 
   	isLendTurn: function() {
@@ -19,10 +20,16 @@ Template.displayCourseBooks.helpers({
   	},
 
   	getTitle: function(ilendbooksId) {
-		var currentLentBook = Books.findOne({_id: ilendbooksId});
-		console.log("title: " + currentLentBook.ItemAttributes[0].Title[0])
-		return currentLentBook.ItemAttributes[0].Title[0];
-  	}
+  		var currentLentBook = Books.findOne({_id: ilendbooksId});
+  		console.log("title: " + currentLentBook.ItemAttributes[0].Title[0])
+  		return currentLentBook.ItemAttributes[0].Title[0];
+  	},
+    getImage: function(ilendbooksId) {
+    //var currentLentBook = Session.get('currentLentBook');
+    var currentLentBook = Books.findOne({_id: ilendbooksId});
+   // console.log("getImage called");
+    return currentLentBook.LargeImage[0].URL[0];
+  }
 })
 
 Template.displayCourseBooks.events({
