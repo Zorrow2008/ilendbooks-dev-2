@@ -75,7 +75,7 @@ Template.findCourses.events({
 	    	currentQuarterClasses: null
 	    }
 	    var userQTDoc = QuarterTracker.findOne({userId: Meteor.userId()});
-	    if(userQTDoc == null) {
+	    if(Session.get('userType') == ilendbooks.public.userType.LENDER) {
 	    	Meteor.call('insertQuarterInfo', quarterInfo);
 	    }else{
 	    	Meteor.call('insertCurrentClasses', Session.get('classes'));

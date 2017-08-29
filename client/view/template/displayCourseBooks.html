@@ -70,12 +70,12 @@
                     <!-- {{getImage ilendbooksId}} -->
                     <div class="back">
                         <div class="header">
-                            <!-- <h5 class="motto">{{getTitle ItemAttributes}}</h5> -->
+                            <h5 class="motto">{{getTitle ilendbooksId}}}</h5>
                         </div>
                         <div class="content">
                             <div class="main">
                              
-                             <b>Textbook title</b> - {{getTitle ilendBooksId}}<br>
+                             
                                  <b>Textbook price</b> - 50 BookCoin <br>
                                  <b>Textbook quantity</b> - 5<br>
                                  
@@ -110,7 +110,9 @@
           {{/each}}
           {{/each}}
         <!-- end col sm 3 -->
-
+ <div class="row">
+    <button type="button" class="btn btn-primary btn-sm pull-right finished">Finished?</button>
+  </div>
 </template>
 
 <!-- Notes:
