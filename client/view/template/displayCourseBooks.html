@@ -58,6 +58,7 @@
 </div>  
             {{#each getCourses}}
             {{#each getTextbooks this}}
+            {{#if isRealBook ilendbooksId}}
             <div class="col-md-4 col-sm-6">
              <div class="card-container">
                 <div class="card">
@@ -76,12 +77,17 @@
                             <div class="main">
                              
                              
-                                 <b>Textbook price</b> - 50 BookCoin <br>
-                                 <b>Textbook quantity</b> - 5<br>
+                                <!--  <b>Textbook price</b> - 50 BookCoin <br>
+                                 <b>Textbook quantity</b> - 5<br> -->
                                  
                                {{#if isLendTurn}}
+                                   <b>Textbook price</b> - 50 BookCoin <br>
+                                   <b> {{getNumberToLend ilendbooksId}}</b> available to lend<br>
                                     <div class=""> <button type="button" class="btn btn-primary btn-sm lend">I have it</button> </div>
+
                                 {{else}}
+                                   <b>Textbook price</b> - 50 BookCoin <br>
+                                   <b> {{getNumberToBorrow ilendbooksId}} </b> available to borrow<br>
                                     <div class=""> <button type="button" class="btn btn-primary btn-sm borrow">I want it</button> </div>
                                 {{/if}}
 
@@ -107,6 +113,10 @@
                 </div> <!-- end card -->
             </div> <!-- end card-container -->
           </div>
+<!--           {{else}} 
+            <h1> It appears there are no recommended or required textbooks for this course as of now! </h1> -->
+          {{/if}}
+
           {{/each}}
           {{/each}}
         <!-- end col sm 3 -->

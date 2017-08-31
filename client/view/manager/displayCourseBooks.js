@@ -7,11 +7,33 @@ Template.displayCourseBooks.helpers({
 	    // var textbookDoc = Textbooks.findOne({course: course});
 	    // return textbookDoc.textbooks;
 	    console.log("course:" + course)
-	    var books = BookRef.find({course: course});
+	    //var books = db.bookRef.distinct("course"); //BookRef.find({course: course});
+      //BookRef.collection.distinct('course');
 	    // for(var key in books ) {
 	    // 	console.log("key: " + key + ", value: " + books[key]);
 	    // }
 
+     // var books = BookRef.find(course: course).fetch();
+      // var booksArray = _.uniq(books, false, function(d) {return d.course});
+      // var disctinctValues = _.pluck(distinctArray, 'foo');
+
+      var books = _.uniq(BookRef.find({course: course}, {
+          sort: {course: 1}, fields: {course: true, ilendbooksId: true}
+      }).fetch().map(function(x) {
+          return x;
+      }), true);
+
+
+     // var books = BookRef.rawCollection().distinct();
+
+    // var books = BookRef.find(course: course).fetch();
+
+    //var books = BookRef.find({course: course});
+
+      for(var key in books ) {
+       console.log("key: " + key + ", value: " + books[key]);
+      }
+    // return _.uniq(books);
 	    return books;
   	},
 
@@ -19,17 +41,42 @@ Template.displayCourseBooks.helpers({
   		return Session.get('userType') == ilendbooks.public.userType.LENDER
   	},
 
+    isRealBook: function(ilendbooksId) {
+      var currentLentBook = Books.findOne({_id: ilendbooksId});
+      return currentLentBook != null;
+    },
+
   	getTitle: function(ilendbooksId) {
   		var currentLentBook = Books.findOne({_id: ilendbooksId});
   		console.log("title: " + currentLentBook.ItemAttributes[0].Title[0])
   		return currentLentBook.ItemAttributes[0].Title[0];
   	},
+
     getImage: function(ilendbooksId) {
     //var currentLentBook = Session.get('currentLentBook');
     var currentLentBook = Books.findOne({_id: ilendbooksId});
    // console.log("getImage called");
     return currentLentBook.LargeImage[0].URL[0];
-  }
+   },
+
+   getNumberToLend: function(ilendbooksId) {
+    var lendDoc = ToLend.findOne({ilendbooksId: ilendbooksId});
+    //console.log("lender array size: " + lendDoc.lender.length);
+    if(lendDoc == null) {
+      return 0;
+    }
+    return lendDoc.lender.length;
+   },
+
+   getNumberToBorrow: function(ilendbooksId) {
+    var borrowDoc = ToBorrow.findOne({ilendbooksId: ilendbooksId});
+   // console.log("borrower array size: " + borrowDoc.borrower.length);
+    if(borrowDoc == null) {
+      return 0;
+    }
+    return borrowDoc.borrower.length;
+
+   }
 })
 
 Template.displayCourseBooks.events({
